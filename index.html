@@ -16,9 +16,9 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
+            color: #e2e8f0;
             overflow-x: hidden;
-            background: #ffffff;
+            background: #0a0a0f;
         }
 
         .container {
@@ -33,12 +33,12 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 20px 0;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
         }
 
         .nav {
@@ -50,35 +50,45 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: #0f172a;
+            color: #ffffff;
             text-decoration: none;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+                         0 0 40px rgba(0, 255, 255, 0.4);
         }
 
         .logo span {
-            color: #3b82f6;
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.6);
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
+            background: linear-gradient(135deg, #00ffff, #00ccff);
+            color: #0a0a0f;
             padding: 14px 32px;
             border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+                        0 0 40px rgba(0, 255, 255, 0.3),
+                        inset 0 0 20px rgba(255, 255, 255, 0.2);
             font-size: 1rem;
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8),
+                        0 0 60px rgba(0, 255, 255, 0.5),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #00ffff, #00ddff);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: #0a0a0f;
             color: white;
             padding: 140px 0 80px;
             text-align: center;
@@ -93,9 +103,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 20%, rgba(0, 255, 128, 0.1) 0%, transparent 50%);
             pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         .hero-content {
@@ -105,14 +122,17 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
             padding: 10px 24px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 30px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+                        inset 0 0 20px rgba(0, 255, 255, 0.1);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
         }
 
         .hero-title {
@@ -121,6 +141,23 @@
             margin-bottom: 25px;
             line-height: 1.1;
             letter-spacing: -2px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff, #00ff80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8))
+                        drop-shadow(0 0 40px rgba(255, 0, 255, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 30px rgba(0, 255, 255, 1))
+                        drop-shadow(0 0 60px rgba(255, 0, 255, 0.7));
+            }
         }
 
         .hero-subtitle {
@@ -152,6 +189,7 @@
         /* Section Styles */
         .section {
             padding: 80px 0;
+            background: #0a0a0f;
         }
 
         .section-title {
@@ -159,14 +197,16 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 20px;
-            color: #0f172a;
+            color: #ffffff;
             letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+                         0 0 40px rgba(255, 0, 255, 0.4);
         }
 
         .section-subtitle {
             font-size: 1.3rem;
             text-align: center;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 60px;
             max-width: 800px;
             margin-left: auto;
@@ -182,16 +222,19 @@
         }
 
         .audience-card {
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
+            background: rgba(20, 20, 30, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             border-radius: 16px;
             padding: 35px;
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .audience-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+            border-color: #00ffff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4),
+                        0 0 60px rgba(0, 255, 255, 0.2),
+                        inset 0 0 20px rgba(0, 255, 255, 0.1);
             transform: translateY(-5px);
         }
 
@@ -199,7 +242,8 @@
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #0f172a;
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
         }
 
         .audience-card .tasks {
@@ -232,29 +276,36 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #3b82f6;
+            color: #00ffff;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
         }
 
         .audience-card .result {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            background: rgba(0, 255, 255, 0.1);
             padding: 20px;
             border-radius: 12px;
             margin-top: 20px;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #00ffff;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
         }
 
         .audience-card .result strong {
-            color: #1e40af;
+            color: #00ffff;
             font-size: 1.05rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
         }
 
         /* Pain Points Section */
         .pain-points {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            background: rgba(255, 0, 255, 0.1);
             padding: 60px 40px;
             border-radius: 20px;
             margin: 40px 0;
+            border: 2px solid rgba(255, 0, 255, 0.4);
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.3),
+                        inset 0 0 40px rgba(255, 0, 255, 0.1);
         }
 
         .pain-points h3 {
@@ -262,7 +313,8 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 40px;
-            color: #78350f;
+            color: #ff00ff;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
         }
 
         .pain-grid {
@@ -272,10 +324,11 @@
         }
 
         .pain-item {
-            background: white;
+            background: rgba(20, 20, 30, 0.9);
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
         }
 
         .pain-item::before {
@@ -287,14 +340,14 @@
 
         .pain-item p {
             font-size: 1.1rem;
-            color: #451a03;
+            color: #e2e8f0;
             font-weight: 500;
             line-height: 1.5;
         }
 
         /* Base Course Section */
         .base-course {
-            background: #f8fafc;
+            background: #0a0a0f;
         }
 
         .mandatory-notice {
@@ -321,18 +374,20 @@
 
         /* Week Cards */
         .week-card {
-            background: white;
+            background: rgba(20, 20, 30, 0.8);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px solid #e2e8f0;
+            box-shadow: 0 0 30px rgba(0, 255, 128, 0.2);
+            border: 2px solid rgba(0, 255, 128, 0.3);
             transition: all 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .week-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            border-color: #3b82f6;
+            box-shadow: 0 0 40px rgba(0, 255, 128, 0.4),
+                        0 0 80px rgba(0, 255, 128, 0.2);
+            border-color: #00ff80;
         }
 
         .week-header {
@@ -347,8 +402,9 @@
         .week-number {
             font-size: 3rem;
             font-weight: 900;
-            color: #3b82f6;
+            color: #00ff80;
             line-height: 1;
+            text-shadow: 0 0 20px rgba(0, 255, 128, 0.8);
         }
 
         .week-title {
@@ -358,8 +414,9 @@
         .week-title h3 {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #0f172a;
+            color: #ffffff;
             margin-bottom: 8px;
+            text-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
         }
 
         .week-focus {
@@ -491,25 +548,28 @@
         }
 
         .pricing-card {
-            background: white;
-            border: 2px solid #e2e8f0;
+            background: rgba(20, 20, 30, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
+            backdrop-filter: blur(10px);
         }
 
         .pricing-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+            border-color: #00ffff;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.4),
+                        0 0 80px rgba(0, 255, 255, 0.2);
             transform: translateY(-5px);
         }
 
         .pricing-card.featured {
-            border-color: #3b82f6;
+            border-color: #00ffff;
             border-width: 3px;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5),
+                        0 0 100px rgba(0, 255, 255, 0.3);
         }
 
         .pricing-badge {
@@ -517,26 +577,29 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
+            background: linear-gradient(135deg, #00ffff, #00ccff);
+            color: #0a0a0f;
             padding: 8px 20px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
         }
 
         .pricing-card h3 {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #0f172a;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
         }
 
         .pricing-card .price {
             font-size: 3rem;
             font-weight: 900;
-            color: #3b82f6;
+            color: #00ffff;
             margin: 20px 0;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
         }
 
         .pricing-card .price span {
@@ -563,9 +626,10 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #22c55e;
+            color: #00ff80;
             font-weight: bold;
             font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(0, 255, 128, 0.8);
         }
 
         .pricing-card .cta-button {
@@ -958,7 +1022,7 @@
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Популярный</div>
                     <h3>База — с куратором</h3>
-                    <div class="price">29 900 ₽</div>
+                    <div class="price">24 900 ₽</div>
                     <ul>
                         <li>Всё из тарифа «Самостоятельно»</li>
                         <li>Проверка домашних заданий</li>
@@ -972,7 +1036,7 @@
                 <!-- Base with Curator + Maya -->
                 <div class="pricing-card">
                     <h3>База — куратор + Майя</h3>
-                    <div class="price">49 900 ₽</div>
+                    <div class="price">189 000 ₽</div>
                     <ul>
                         <li>Всё из тарифа «С куратором»</li>
                         <li>Личная обратная связь от Майи</li>
