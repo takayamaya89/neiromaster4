@@ -43,83 +43,128 @@
 }
 
 :root {
-  --primary: oklch(0.65 0.2 250);
-  --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.65 0.2 250);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.65 0.2 250);
-  --chart-2: oklch(0.6 0.18 245);
-  --chart-3: oklch(0.55 0.16 240);
-  --chart-4: oklch(0.5 0.14 235);
-  --chart-5: oklch(0.45 0.12 230);
-  --radius: 0.5rem;
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.95 0.002 65);
-  --card: oklch(0.12 0.002 285);
-  --card-foreground: oklch(0.95 0.002 65);
-  --popover: oklch(0.12 0.002 285);
-  --popover-foreground: oklch(0.95 0.002 65);
-  --secondary: oklch(0.2 0.004 286);
-  --secondary-foreground: oklch(0.9 0.002 65);
-  --muted: oklch(0.25 0.005 286);
-  --muted-foreground: oklch(0.7 0.004 65);
-  --accent: oklch(0.65 0.2 250);
-  --accent-foreground: oklch(0.08 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.2 0.004 286);
-  --input: oklch(0.15 0.003 286);
-  --ring: oklch(0.65 0.2 250);
-  --sidebar: oklch(0.12 0.002 285);
-  --sidebar-foreground: oklch(0.95 0.002 65);
-  --sidebar-accent: oklch(0.65 0.2 250);
-  --sidebar-accent-foreground: oklch(0.08 0 0);
-  --sidebar-border: oklch(0.2 0.004 286);
-  --sidebar-ring: oklch(0.65 0.2 250);
+  /* Neon Colors */
+  --neon-blue: #3B82F6;
+  --neon-cyan: #22D3EE;
+  --neon-violet: #8B5CF6;
+  --neon-glow: rgba(59, 130, 246, 0.6);
+  --neon-glow-cyan: rgba(34, 211, 238, 0.6);
+  --neon-glow-violet: rgba(139, 92, 246, 0.6);
+  --deep-black: #0A0A0A;
+  --dark-bg: #0F0F0F;
+  --dark-surface: #1A1A1A;
+  
+  /* Shadows with Glow */
+  --shadow-neon: 0 0 20px var(--neon-glow), 0 0 40px rgba(59, 130, 246, 0.3);
+  --shadow-neon-cyan: 0 0 20px var(--neon-glow-cyan), 0 0 40px rgba(34, 211, 238, 0.3);
+  --shadow-neon-violet: 0 0 20px var(--neon-glow-violet), 0 0 40px rgba(139, 92, 246, 0.3);
+  
+  /* Primary Colors */
+  --primary: var(--neon-blue);
+  --primary-foreground: #ffffff;
+  --sidebar-primary: var(--neon-blue);
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: var(--neon-blue);
+  --chart-2: var(--neon-cyan);
+  --chart-3: var(--neon-violet);
+  --chart-4: var(--neon-blue);
+  --chart-5: var(--neon-cyan);
+  --radius: 0.65rem;
+  --background: var(--deep-black);
+  --foreground: #ffffff;
+  --card: var(--dark-surface);
+  --card-foreground: #ffffff;
+  --popover: var(--dark-surface);
+  --popover-foreground: #ffffff;
+  --secondary: var(--neon-cyan);
+  --secondary-foreground: var(--deep-black);
+  --muted: #404040;
+  --muted-foreground: #a0a0a0;
+  --accent: var(--neon-blue);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #262626;
+  --input: #1a1a1a;
+  --ring: var(--neon-blue);
+  --sidebar: var(--dark-surface);
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: var(--neon-blue);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #262626;
+  --sidebar-ring: var(--neon-blue);
 }
 
 .dark {
-  --primary: oklch(0.65 0.2 250);
-  --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.65 0.2 250);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.95 0.002 65);
-  --card: oklch(0.12 0.002 285);
-  --card-foreground: oklch(0.95 0.002 65);
-  --popover: oklch(0.12 0.002 285);
-  --popover-foreground: oklch(0.95 0.002 65);
-  --secondary: oklch(0.2 0.004 286);
-  --secondary-foreground: oklch(0.9 0.002 65);
-  --muted: oklch(0.25 0.005 286);
-  --muted-foreground: oklch(0.7 0.004 65);
-  --accent: oklch(0.65 0.2 250);
-  --accent-foreground: oklch(0.08 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.2 0.004 286);
-  --input: oklch(0.15 0.003 286);
-  --ring: oklch(0.65 0.2 250);
-  --chart-1: oklch(0.65 0.2 250);
-  --chart-2: oklch(0.6 0.18 245);
-  --chart-3: oklch(0.55 0.16 240);
-  --chart-4: oklch(0.5 0.14 235);
-  --chart-5: oklch(0.45 0.12 230);
-  --sidebar: oklch(0.12 0.002 285);
-  --sidebar-foreground: oklch(0.95 0.002 65);
-  --sidebar-accent: oklch(0.65 0.2 250);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.2 0.004 286);
-  --sidebar-ring: oklch(0.65 0.2 250);
+  --primary: var(--neon-blue);
+  --primary-foreground: #ffffff;
+  --sidebar-primary: var(--neon-blue);
+  --sidebar-primary-foreground: #ffffff;
+  --background: var(--deep-black);
+  --foreground: #ffffff;
+  --card: var(--dark-surface);
+  --card-foreground: #ffffff;
+  --popover: var(--dark-surface);
+  --popover-foreground: #ffffff;
+  --secondary: var(--neon-cyan);
+  --secondary-foreground: var(--deep-black);
+  --muted: #404040;
+  --muted-foreground: #a0a0a0;
+  --accent: var(--neon-blue);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #262626;
+  --input: #1a1a1a;
+  --ring: var(--neon-blue);
+  --chart-1: var(--neon-blue);
+  --chart-2: var(--neon-cyan);
+  --chart-3: var(--neon-violet);
+  --chart-4: var(--neon-blue);
+  --chart-5: var(--neon-cyan);
+  --sidebar: var(--dark-surface);
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: var(--neon-blue);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #262626;
+  --sidebar-ring: var(--neon-blue);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-6xl font-bold;
+    font-weight: 700;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-4xl font-bold;
+    font-weight: 700;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
+  }
+  
   body {
     @apply bg-background text-foreground;
   }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -130,6 +175,29 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+  
+  /* Neon Glow Utilities */
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .neon-glow-cyan {
+    box-shadow: var(--shadow-neon-cyan);
+  }
+  
+  .neon-glow-violet {
+    box-shadow: var(--shadow-neon-violet);
+  }
+  
+  .neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-glow), 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .neon-border {
+    border-color: var(--neon-blue);
+    box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.2), 0 0 10px var(--neon-glow);
   }
 }
 
@@ -172,6 +240,44 @@
       padding-left: 2rem; /* 32px - desktop padding */
       padding-right: 2rem;
       max-width: 1280px; /* Standard content width */
+    }
+  }
+  
+  /* Neon Button Styles */
+  .btn-neon-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: var(--neon-blue);
+    color: #ffffff;
+    box-shadow: var(--shadow-neon);
+    
+    &:hover {
+      box-shadow: 0 0 30px var(--neon-glow), 0 0 60px rgba(59, 130, 246, 0.4);
+      transform: scale(1.03);
+    }
+  }
+  
+  .btn-neon-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.1), 0 0 10px var(--neon-glow);
+    
+    &:hover {
+      background-color: rgba(59, 130, 246, 0.1);
+      box-shadow: inset 0 0 15px rgba(59, 130, 246, 0.2), 0 0 20px var(--neon-glow);
+      transform: scale(1.02);
+    }
+  }
+  
+  /* Neon Accordion */
+  .accordion-neon {
+    @apply border-l-4 pl-4 py-3 transition-all duration-300;
+    border-color: var(--neon-blue);
+    box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.1);
+    
+    &:hover {
+      box-shadow: inset 0 0 15px rgba(59, 130, 246, 0.2), 0 0 10px var(--neon-glow);
     }
   }
 }
