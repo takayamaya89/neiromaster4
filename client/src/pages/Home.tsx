@@ -613,28 +613,48 @@ export default function Home() {
         >
           <div className="container max-w-4xl mx-auto px-4">
             <h2
-              className="text-3xl md:text-4xl font-bold mb-12 text-center"
+              className="text-3xl md:text-4xl font-bold mb-6 text-center"
             >
               Бонусы курса
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="text-center mb-8 p-6 glass-panel rounded-lg border border-[rgba(59,130,246,0.35)]">
+              <p className="text-xl font-semibold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
+                При покупке прямо сейчас ты получаешь бонусов на сумму 55.000 рублей!
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               {[
-                { title: "PromptHub", desc: "постоянно обновляющаяся база знаний по ИИ" },
-                { title: "Промпты на любые задачи", desc: "1000+" },
-                { title: "Мастер-классы", desc: "Живые эфиры с Майей" },
-                { title: "Комьюнити и поддержка", desc: "куратора внутри клуба" },
-                { title: "Разборы", desc: "Лайфаки и кейсы" },
-                { title: "Мастермайнды", desc: "с автором курса (нацеленные на формирование точного понимания о монетизации и продажах услуг в новых реалиях)" }
+                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей" },
+                { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ" },
+                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста" },
+                { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%" },
+                { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка" },
+                { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов" }
               ].map((bonus, idx) => (
                 <div
                   key={idx}
-                  className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)]"
+                  className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
                 >
                   <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
                   <p className="text-gray-400">{bonus.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="glass-panel rounded-lg p-8 border border-[rgba(59,130,246,0.35)]">
+              <h3 className="text-xl font-semibold text-gray-200 mb-6 text-center">Дополнительно включено:</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2" style={{ color: "#3B82F6" }}>PromptHub</p>
+                  <p className="text-gray-400">постоянно обновляющаяся база знаний по ИИ</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2" style={{ color: "#3B82F6" }}>1000+</p>
+                  <p className="text-gray-400">промптов на любые задачи</p>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 space-y-3 text-gray-400">
