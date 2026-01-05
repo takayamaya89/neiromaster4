@@ -838,10 +838,25 @@ export default function Home() {
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)]"
               {...fadeInUp}
             >
-              <h3 className="text-2xl font-bold mb-2 text-gray-200" style={{ color: "#22D3EE" }}>Майя Галицкая</h3>
-              <p className="text-gray-400 mb-6">Маркетолог с 15+ лет опыта, топовый AI-практик</p>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                {/* Photo */}
+                <div className="flex-shrink-0 w-full md:w-48">
+                  <img
+                    src="/images/author.png"
+                    alt="Майя Галицкая"
+                    className="w-full rounded-lg border border-[rgba(59,130,246,0.35)] shadow-lg"
+                    style={{
+                      boxShadow: '0 0 40px rgba(59,130,246,0.25), 0 0 20px rgba(34,211,238,0.15)'
+                    }}
+                  />
+                </div>
 
-              <div className="space-y-3 text-gray-400">
+                {/* Info */}
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-200" style={{ color: "#22D3EE" }}>Майя Галицкая</h3>
+                  <p className="text-gray-400 mb-6">Маркетолог с 15+ лет опыта, топовый AI-практик</p>
+
+                  <div className="space-y-3 text-gray-400">
                 <p className="flex items-start gap-3">
                   <span className="text-[#22D3EE]">✓</span>
                   <span>Создатель самых продающих курсов по нейросетям в СНГ</span>
@@ -858,6 +873,8 @@ export default function Home() {
                   <span className="text-[#22D3EE]">✓</span>
                   <span>Спикер форумов и мастер-классов для гос. структур</span>
                 </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
