@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Zap, Code, Rocket } from 'lucide-react';
+import PopupPlaceTaken from '@/components/PopupPlaceTaken';
+import PopupSystemActive from '@/components/PopupSystemActive';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -12,7 +15,98 @@ const fadeInUp = {
   viewport: { once: true, margin: '0px 0px -100px 0px' }
 };
 
+const NAMES_AND_CITIES = [
+  { name: 'Дмитрий', city: 'Екатеринбург' },
+  { name: 'Анна', city: 'Москва' },
+  { name: 'Ирина', city: 'Санкт-Петербург' },
+  { name: 'Алексей', city: 'Казань' },
+  { name: 'Мария', city: 'Новосибирск' },
+  { name: 'Павел', city: 'Краснодар' },
+  { name: 'Ольга', city: 'Ростов-на-Дону' },
+  { name: 'Сергей', city: 'Тюмень' },
+  { name: 'Наталья', city: 'Самара' },
+  { name: 'Артём', city: 'Минск' }
+];
+
 export default function Home() {
+  const [showPlaceTaken, setShowPlaceTaken] = useState(false);
+  const [showSystemActive, setShowSystemActive] = useState(false);
+  const [currentPerson, setCurrentPerson] = useState(NAMES_AND_CITIES[0]);
+  const [lastPersonIndex, setLastPersonIndex] = useState(-1);
+  const [systemActiveShown, setSystemActiveShown] = useState(false);
+  const [systemActiveClosedAt, setSystemActiveClosedAt] = useState<number | null>(null);
+  const [hasClickedStartButton, setHasClickedStartButton] = useState(false);
+  const [lastInactivityTime, setLastInactivityTime] = useState(Date.now());
+
+  // Pop-up №1: Место занято (каждые 25-45 сек)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let randomIndex = Math.floor(Math.random() * NAMES_AND_CITIES.length);
+      while (randomIndex === lastPersonIndex) {
+        randomIndex = Math.floor(Math.random() * NAMES_AND_CITIES.length);
+      }
+      setLastPersonIndex(randomIndex);
+      setCurrentPerson(NAMES_AND_CITIES[randomIndex]);
+      setShowPlaceTaken(true);
+
+      const timer = setTimeout(() => {
+        setShowPlaceTaken(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }, 25000 + Math.random() * 20000);
+
+    return () => clearInterval(interval);
+  }, [lastPersonIndex]);
+
+  // Pop-up №2: Система активна (через 30 сек бездействия)
+  useEffect(() => {
+    const handleActivity = () => {
+      setLastInactivityTime(Date.now());
+    };
+
+    window.addEventListener('click', handleActivity);
+    window.addEventListener('scroll', handleActivity);
+    window.addEventListener('keydown', handleActivity);
+
+    return () => {
+      window.removeEventListener('click', handleActivity);
+      window.removeEventListener('scroll', handleActivity);
+      window.removeEventListener('keydown', handleActivity);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (hasClickedStartButton) return;
+    if (systemActiveShown) return;
+    if (systemActiveClosedAt && Date.now() - systemActiveClosedAt < 600000) return; // 10 минут
+
+    const checkInactivity = setInterval(() => {
+      if (Date.now() - lastInactivityTime >= 30000) {
+        setShowSystemActive(true);
+        setSystemActiveShown(true);
+        clearInterval(checkInactivity);
+      }
+    }, 1000);
+
+    return () => clearInterval(checkInactivity);
+  }, [lastInactivityTime, systemActiveShown, systemActiveClosedAt, hasClickedStartButton]);
+
+  const handleCloseSystemActive = () => {
+    setShowSystemActive(false);
+    setSystemActiveClosedAt(Date.now());
+  };
+
+  const handleSystemActiveCTA = () => {
+    setHasClickedStartButton(true);
+    setShowSystemActive(false);
+    // Скролл к первой кнопке CTA
+    const ctaButton = document.querySelector('[data-cta="start"]');
+    if (ctaButton) {
+      ctaButton.scrollIntoView({ behavior: 'smooth' });
+      (ctaButton as HTMLButtonElement).click();
+    }
+  };
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
       {/* ANIMATED BACKGROUND LAYERS */}
@@ -860,6 +954,19 @@ export default function Home() {
             <p>© 2024 NEIROMASTER 5.0. Все права защищены.</p>
           </div>
         </footer>
+
+      {/* Pop-ups */}
+      <PopupPlaceTaken
+        isVisible={showPlaceTaken}
+        onClose={() => setShowPlaceTaken(false)}
+        name={currentPerson.name}
+        city={currentPerson.city}
+      />
+      <PopupSystemActive
+        isVisible={showSystemActive}
+        onClose={handleCloseSystemActive}
+        onCTA={handleSystemActiveCTA}
+      />
       </div>
     </div>
   );
