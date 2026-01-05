@@ -327,25 +327,7 @@ export default function Home() {
               <div
                 className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] flex items-center justify-center"
               >
-                <svg viewBox="0 0 300 300" className="w-full h-full">
-                  {/* Center node */}
-                  <circle cx="150" cy="150" r="20" fill="#3B82F6" opacity="0.8" />
-                  <circle cx="150" cy="150" r="20" fill="none" stroke="#3B82F6" strokeWidth="2" opacity="0.3">
-                    <animate attributeName="r" from="20" to="40" dur="2s" repeatCount="indefinite" />
-                  </circle>
-
-                  {/* Connecting lines */}
-                  <line x1="150" y1="150" x2="150" y2="80" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="220" y2="150" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="150" y2="220" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="80" y2="150" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-
-                  {/* Peripheral nodes */}
-                  <circle cx="150" cy="80" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="220" cy="150" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="150" cy="220" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="80" cy="150" r="12" fill="#22D3EE" opacity="0.7" />
-                </svg>
+                <img src="/images/brain-circuit.png" alt="AI Brain Circuit" className="w-full h-full object-contain" />
               </div>
             </div>
 
