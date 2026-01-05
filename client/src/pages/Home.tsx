@@ -1020,8 +1020,21 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="border-t border-[rgba(59,130,246,0.35)] py-8 relative">
-          <div className="container max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-            <p>© 2024 NEIROMASTER 5.0. Все права защищены.</p>
+          <div className="container max-w-4xl mx-auto px-4">
+            <div className="text-center text-gray-500 text-sm space-y-3">
+              <p>© 2024 NEIROMASTER 5.0. Все права защищены.</p>
+              <p>ИП Галицкая М.В.</p>
+              <p>
+                <a 
+                  href="https://course.takayamaya.ru/oferta_neiro" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#3B82F6] hover:text-[#22D3EE] transition-colors underline"
+                >
+                  Договор оферты и политика конфиденциальности
+                </a>
+              </p>
+            </div>
           </div>
         </footer>
 
