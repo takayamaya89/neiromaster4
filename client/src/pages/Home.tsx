@@ -215,34 +215,136 @@ export default function Home() {
                   {item.title}
                 </AccordionTrigger>
                 <AccordionContent className="pt-6 space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
-                        <p className="text-foreground/80">автоматизировать процессы</p>
+                  {item.value === "expert" && (
+                    <>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
+                        <div className="space-y-2">
+                          {["автоматизировать процессы", "сократить ручную рутину", "контролировать задачи и отчёты", "делегировать ИИ", "запускать продукты без выгорания"].map((task, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
+                              <p className="text-foreground/80">{task}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
-                        <p className="text-foreground/80">сократить ручную рутину</p>
+                      <motion.div 
+                        className="rounded-lg p-4 border-l-4"
+                        style={{ 
+                          borderColor: "var(--neon-violet)",
+                          backgroundColor: "rgba(139, 92, 246, 0.05)"
+                        }}
+                      >
+                        <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
+                          Результат: Больше денег, меньше хаоса, понятная система работы вместо постоянного перегруза.
+                        </p>
+                      </motion.div>
+                    </>
+                  )}
+                  {item.value === "smm" && (
+                    <>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
+                        <div className="space-y-2">
+                          {["контент-план за минуты", "тексты и идеи для постов", "визуал и видео", "аналитика и стратегии"].map((task, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
+                              <p className="text-foreground/80">{task}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
-                        <p className="text-foreground/80">контролировать задачи и отчёты</p>
+                      <motion.div 
+                        className="rounded-lg p-4 border-l-4"
+                        style={{ 
+                          borderColor: "var(--neon-violet)",
+                          backgroundColor: "rgba(139, 92, 246, 0.05)"
+                        }}
+                      >
+                        <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
+                          Результат: Скорость работы ×5, рост дохода, больше клиентов без увеличения загрузки.
+                        </p>
+                      </motion.div>
+                    </>
+                  )}
+                  {item.value === "marketer" && (
+                    <>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
+                        <div className="space-y-2">
+                          {["стратегии и воронки", "офферы и упаковка", "анализ ЦА", "автоматизация процессов"].map((task, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
+                              <p className="text-foreground/80">{task}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <motion.div 
-                    className="rounded-lg p-4 border-l-4"
-                    style={{ 
-                      borderColor: "var(--neon-violet)",
-                      backgroundColor: "rgba(139, 92, 246, 0.05)"
-                    }}
-                  >
-                    <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
-                      Результат: Больше денег, меньше хаоса, понятная система работы.
-                    </p>
-                  </motion.div>
+                      <motion.div 
+                        className="rounded-lg p-4 border-l-4"
+                        style={{ 
+                          borderColor: "var(--neon-violet)",
+                          backgroundColor: "rgba(139, 92, 246, 0.05)"
+                        }}
+                      >
+                        <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
+                          Результат: Системный подход, выше конверсии, больше запусков и проектов.
+                        </p>
+                      </motion.div>
+                    </>
+                  )}
+                  {item.value === "producer" && (
+                    <>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
+                        <div className="space-y-2">
+                          {["сценарии запусков", "структура продуктов", "контент-стратегии", "управление ИИ-ассистентами"].map((task, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
+                              <p className="text-foreground/80">{task}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <motion.div 
+                        className="rounded-lg p-4 border-l-4"
+                        style={{ 
+                          borderColor: "var(--neon-violet)",
+                          backgroundColor: "rgba(139, 92, 246, 0.05)"
+                        }}
+                      >
+                        <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
+                          Результат: Быстрые запуски, масштабирование, рост выручки.
+                        </p>
+                      </motion.div>
+                    </>
+                  )}
+                  {item.value === "copywriter" && (
+                    <>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Задачи:</h4>
+                        <div className="space-y-2">
+                          {["продающие тексты и сценарии", "смыслы и позиционирование", "сторис, рилсы, прогревы", "визуальный контент"].map((task, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-cyan)" }}></div>
+                              <p className="text-foreground/80">{task}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <motion.div 
+                        className="rounded-lg p-4 border-l-4"
+                        style={{ 
+                          borderColor: "var(--neon-violet)",
+                          backgroundColor: "rgba(139, 92, 246, 0.05)"
+                        }}
+                      >
+                        <p className="text-foreground/90 font-medium" style={{ color: "var(--neon-violet)" }}>
+                          Результат: Больше заказов, выше чек, меньше рутины.
+                        </p>
+                      </motion.div>
+                    </>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -365,8 +467,103 @@ export default function Home() {
                 <AccordionTrigger className="text-lg font-semibold hover:text-neon-cyan transition-colors">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="pt-4">
-                  <p className="text-foreground/80">Содержание модуля...</p>
+                <AccordionContent className="pt-6 space-y-6">
+                  {item.value === "week0" && (
+                    <>
+                      <div>
+                        <p className="font-semibold text-foreground mb-3" style={{ color: "var(--neon-cyan)" }}>Результат:</p>
+                        <p className="text-foreground/80 mb-4">Полностью готовая инфраструктура для работы с ИИ</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Что внутри:</h4>
+                        <div className="space-y-2">
+                          {["VPN и стабильные подключения", "доступ к недоступным сервисам", "зарубежные виртуальные карты", "безопасная оплата подписок", "оптимальная конфигурация устройств"].map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-blue)" }}></div>
+                              <p className="text-foreground/80">{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  {item.value === "week1" && (
+                    <>
+                      <div>
+                        <p className="font-semibold text-foreground mb-3" style={{ color: "var(--neon-cyan)" }}>Результат:</p>
+                        <p className="text-foreground/80 mb-4">Вы умеете управлять ИИ, создавать ассистентов и понимаете, как зарабатывать на этих навыках.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Что изучаем:</h4>
+                        <div className="space-y-2">
+                          {["GPT, Claude, DeepSeek, Gemini, Qwen", "профессиональный промптинг", "тёмная промпт-инженерия", "создание ИИ-ассистентов под задачи и монетизацию", "анализ ЦА и конкурентов"].map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-blue)" }}></div>
+                              <p className="text-foreground/80">{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Мини-проект:</h4>
+                        <p className="text-foreground/80">Команда ИИ-ассистентов под реальные задачи</p>
+                      </div>
+                    </>
+                  )}
+                  {item.value === "week2" && (
+                    <>
+                      <div>
+                        <p className="font-semibold text-foreground mb-3" style={{ color: "var(--neon-cyan)" }}>Результат:</p>
+                        <p className="text-foreground/80 mb-4">Вы самостоятельно создаёте визуал и видео под коммерческие задачи.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Что изучаем:</h4>
+                        <div className="space-y-2">
+                          {["графические нейросети", "видео-нейросети", "айдентика и упаковка", "карточки маркетплейсов", "цифровые аватары, озвучка, монтаж"].map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-blue)" }}></div>
+                              <p className="text-foreground/80">{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Мини-проект:</h4>
+                        <p className="text-foreground/80">Видео или клип, созданный полностью с помощью ИИ</p>
+                      </div>
+                    </>
+                  )}
+                  {item.value === "week3" && (
+                    <>
+                      <div>
+                        <p className="font-semibold text-foreground mb-3" style={{ color: "var(--neon-cyan)" }}>Результат:</p>
+                        <p className="text-foreground/80 mb-4">Вы умеете собирать продающие нейросистемы.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Что изучаем:</h4>
+                        <div className="space-y-2">
+                          {["чат-боты через SendPulse", "чат-боты через ChatPlace", "нейроворонка 'Связка взрывного роста'", "VibeCoding через Manus"].map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 neon-glow" style={{ backgroundColor: "var(--neon-blue)" }}></div>
+                              <p className="text-foreground/80">{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Мини-проект:</h4>
+                        <p className="text-foreground/80">Готовая нейроворонка с оффером</p>
+                      </div>
+                    </>
+                  )}
+                  {item.value === "final" && (
+                    <>
+                      <div>
+                        <p className="font-semibold text-foreground mb-3" style={{ color: "var(--neon-cyan)" }}>Результат:</p>
+                        <p className="text-foreground/80">Понимание, как масштабироваться, повышать чек и выбирать специализацию.</p>
+                      </div>
+                    </>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -531,7 +728,19 @@ export default function Home() {
                   {item.title}
                 </AccordionTrigger>
                 <AccordionContent className="pt-4">
-                  <p className="text-foreground/80">Ответ на вопрос...</p>
+                  <p className="text-foreground/80">
+                    {item.value === "q1" && "Да. Курс построен от простого к сложному. Мы начинаем с базы и постепенно выстраиваем систему работы с ИИ."}
+                    {item.value === "q2" && "В среднем 3–5 часов в неделю. Все материалы в записи, обучение в удобном темпе."}
+                    {item.value === "q3" && "Практика. Каждую неделю вы собираете рабочие инструменты и системы."}
+                    {item.value === "q4" && "Да. Курс не привязан к вебинару и подходит всем digital-специалистам."}
+                    {item.value === "q5" && "Да. Уже на первой неделе вы осваиваете навыки, которые можно монетизировать."}
+                    {item.value === "q6" && "Нет. Всё объясняется пошагово, без программирования."}
+                    {item.value === "q7" && "6 месяцев с возможностью пересмотра."}
+                    {item.value === "q8" && "Да, на тарифах с куратором."}
+                    {item.value === "q9" && "Да, доступна рассрочка и оплата по частям."}
+                    {item.value === "q10" && "Да, после успешного завершения курса."}
+                    {item.value === "q11" && "В течение 7 дней возможен возврат средств."}
+                  </p>
                 </AccordionContent>
               </AccordionItem>
             ))}
