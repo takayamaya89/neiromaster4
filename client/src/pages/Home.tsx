@@ -616,11 +616,11 @@ export default function Home() {
                   title: "самостоятельно",
                   price: "19 900 ₽",
                   details: [
-                    "Видео-уроки",
-                    "Чат с участниками (без куратора)",
-                    "Без проверки домашних заданий",
-                    "Без обратной связи от кураторов и автора",
-                    "Без бонусов курса"
+                    { text: "Видео-уроки", included: true },
+                    { text: "Чат с участниками (без куратора)", included: true },
+                    { text: "Без проверки домашних заданий", included: false },
+                    { text: "Без обратной связи от кураторов и автора", included: false },
+                    { text: "Без бонусов курса", included: false }
                   ],
                   popular: false
                 },
@@ -671,12 +671,19 @@ export default function Home() {
                     {plan.price}
                   </p>
                   <ul className="mb-6 space-y-2 text-xs text-gray-400">
-                    {plan.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#22D3EE] mt-1">✓</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
+                    {plan.details.map((detail, i) => {
+                      const isObject = typeof detail === 'object';
+                      const text = isObject ? detail.text : detail;
+                      const included = isObject ? detail.included : true;
+                      return (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className={`mt-1 ${included ? 'text-[#22D3EE]' : 'text-red-500'}`}>
+                            {included ? '✓' : '✗'}
+                          </span>
+                          <span>{text}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                   <Button className={plan.popular ? "btn-neon-primary w-full" : "btn-neon-secondary w-full"}>
                     Выбрать тариф
