@@ -209,6 +209,54 @@ export default function Home() {
           </div>
         </section>
 
+        {/* BLOCK 1.5: MAYA POSITIONING */}
+        <section
+          className="py-20 md:py-32 relative"
+        >
+          <div className="container max-w-4xl mx-auto px-4">
+            <div className="glass-panel rounded-lg p-8 md:p-12 border border-[rgba(34,211,238,0.35)]">
+              <div className="text-center space-y-6">
+                <h2
+                  className="text-3xl md:text-4xl font-bold"
+                  style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
+                >
+                  Меня зовут <span style={{ color: "#FFFFFF" }}>МАЙЯ ГАЛИЦКАЯ</span>!
+                </h2>
+                <p className="text-xl md:text-2xl font-semibold text-gray-200">
+                  Я - <span style={{ color: "#22D3EE" }}>ЭКСПЕРТ</span>, которого вы <span style={{ color: "#22D3EE" }}>ЗАСЛУЖИЛИ</span>!
+                </p>
+                <p className="text-lg text-gray-300 mb-8">
+                  А ВЫ, как известно, <span style={{ color: "#22D3EE", fontWeight: "bold" }}>ЗАСЛУЖИВАЕТЕ ЛУЧШЕГО</span>!
+                </p>
+                
+                <div className="border-t border-[rgba(34,211,238,0.35)] pt-8 mt-8">
+                  <p className="text-gray-300 mb-6 text-base md:text-lg leading-relaxed">
+                    Я не учу пользоваться нейросетями, я учу <span style={{ color: "#22D3EE", fontWeight: "bold" }}>встраивать их в работу</span>, чтобы:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Создавать стабильный рост аудитории</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Очередь из клиентов</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Кратно увеличивать заработок</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Оптимизировать затраты</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* BLOCK 2: WHY AI DOESN'T WORK */}
         <section
           className="py-20 md:py-32 relative"
