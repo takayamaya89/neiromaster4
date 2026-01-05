@@ -110,13 +110,19 @@ export default function Home() {
       <div className="fixed bottom-6 right-6 z-50" style={{
         animation: 'float 4s ease-in-out infinite'
       }}>
-        <div className="relative">
+        <div className="relative flex items-center justify-center" style={{
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(34, 211, 238, 0.15) 70%, transparent 100%)',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          boxShadow: '0 0 60px rgba(34, 211, 238, 0.4), 0 0 100px rgba(59, 130, 246, 0.2), inset 0 0 60px rgba(34, 211, 238, 0.1)'
+        }}>
           <img 
             src="/images/getcourse-logo.png" 
             alt="GetCourse" 
-            className="w-40 h-40 hover:scale-125 transition-transform duration-300 cursor-pointer"
+            className="w-40 h-40 hover:scale-110 transition-transform duration-300 cursor-pointer"
             style={{
-              filter: 'drop-shadow(0 0 40px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.5)) drop-shadow(0 0 120px rgba(34, 211, 238, 0.3))'
+              filter: 'drop-shadow(0 0 20px rgba(34, 211, 238, 0.6))'
             }}
           />
         </div>
