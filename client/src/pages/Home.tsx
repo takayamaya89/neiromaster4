@@ -105,7 +105,7 @@ export default function Home() {
     }
   };
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B] overflow-hidden relative">
       {/* FLOATING GETCOURSE LOGO */}
       <div className="fixed bottom-6 right-6 z-50" style={{
         animation: 'float 4s ease-in-out infinite'
@@ -129,12 +129,13 @@ export default function Home() {
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
         <motion.div
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-15"
           style={{
             backgroundImage: 'url(/images/hero-neon-network.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundAttachment: 'fixed',
+            filter: 'invert(1) brightness(1.1)'
           }}
           animate={{ y: [0, 40, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -142,33 +143,33 @@ export default function Home() {
 
         {/* Layer 2: Blurred neon spheres */}
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-30"
+          className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-12"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
             filter: 'blur(140px)',
-            mixBlendMode: 'screen'
+            mixBlendMode: 'multiply'
           }}
           animate={{ x: [0, 80, 0], y: [0, 50, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
         <motion.div
-          className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-25"
+          className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-10"
           style={{
             background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)',
             filter: 'blur(160px)',
-            mixBlendMode: 'screen'
+            mixBlendMode: 'multiply'
           }}
           animate={{ x: [0, -60, 0], y: [0, -70, 0] }}
           transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
         <motion.div
-          className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20"
+          className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-8"
           style={{
             background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)',
             filter: 'blur(180px)',
-            mixBlendMode: 'screen'
+            mixBlendMode: 'multiply'
           }}
           animate={{ x: [0, 90, 0], y: [0, -60, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -192,19 +193,19 @@ export default function Home() {
             </h1>
 
             <p
-              className="text-xl md:text-2xl text-gray-300 mb-4"
+              className="text-xl md:text-2xl text-[#475569] mb-4"
             >
               Система работы с нейросетями для digital и Экспертов
             </p>
 
             <p
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-[#64748B] mb-8 max-w-2xl mx-auto"
             >
               Как делать задачи быстрее, качественнее и ДОРОЖЕ — без потери экспертности и контроля
             </p>
 
             <p
-              className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
+              className="text-base md:text-lg text-[#64748B] mb-12 glass-panel rounded-lg p-4 border border-[rgba(59,130,246,0.25)]"
             >
               Не «курс по нейросетям», а рабочая СИСТЕМА работы с НЕЙРОСЕТЯМИ
             </p>
@@ -221,7 +222,7 @@ export default function Home() {
             </div>
 
             <p
-              className="text-sm text-gray-500"
+              className="text-sm text-[#94A3B8]"
             >
               Доступ сразу после оплаты · обучение в своём темпе
             </p>
