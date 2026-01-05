@@ -106,6 +106,25 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
+      {/* FLOATING GETCOURSE LOGO */}
+      <div className="fixed bottom-8 right-8 z-50 animate-bounce" style={{
+        animation: 'float 3s ease-in-out infinite'
+      }}>
+        <img 
+          src="/images/getcourse-logo.png" 
+          alt="GetCourse" 
+          className="w-24 h-24 drop-shadow-lg hover:scale-110 transition-transform cursor-pointer"
+          style={{
+            filter: 'drop-shadow(0 0 20px rgba(34, 211, 238, 0.4))'
+          }}
+        />
+      </div>
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+      `}</style>
       {/* ANIMATED BACKGROUND LAYERS */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
