@@ -2,6 +2,7 @@
 
 
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Zap, Code, Rocket } from 'lucide-react';
@@ -108,7 +109,7 @@ export default function Home() {
       {/* ANIMATED BACKGROUND LAYERS */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
-        <div
+        <motion.div
           className="absolute inset-0 opacity-25"
           style={{
             backgroundImage: 'url(/images/hero-neon-network.png)',
@@ -121,7 +122,7 @@ export default function Home() {
         />
 
         {/* Layer 2: Blurred neon spheres */}
-        <div
+        <motion.div
           className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
@@ -132,7 +133,7 @@ export default function Home() {
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <div
+        <motion.div
           className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-25"
           style={{
             background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)',
@@ -143,7 +144,7 @@ export default function Home() {
           transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <div
+        <motion.div
           className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20"
           style={{
             background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)',
@@ -861,7 +862,7 @@ export default function Home() {
                 { img: '/images/IMG_7707.jpg', alt: 'Отзыв 5' },
                 { img: '/images/IMG_58442.JPG', alt: 'Отзыв 6' }
               ].map((testimonial, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="relative group"
                   initial={{ opacity: 0, y: 20 }}
@@ -886,7 +887,7 @@ export default function Home() {
                       className="w-full h-auto rounded-xl object-cover"
                     />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
