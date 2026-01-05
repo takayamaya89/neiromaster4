@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+
 import { useState, useEffect } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -8,12 +8,8 @@ import { Zap, Code, Rocket } from 'lucide-react';
 import PopupPlaceTaken from '@/components/PopupPlaceTaken';
 import PopupSystemActive from '@/components/PopupSystemActive';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
-  viewport: { once: true, margin: '0px 0px -100px 0px' }
-};
+// Анимации отключены для оптимизации производительности
+const fadeInUp = {};
 
 const NAMES_AND_CITIES = [
   { name: 'Дмитрий', city: 'Екатеринбург' },
@@ -112,7 +108,7 @@ export default function Home() {
       {/* ANIMATED BACKGROUND LAYERS */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
-        <motion.div
+        <div
           className="absolute inset-0 opacity-25"
           style={{
             backgroundImage: 'url(/images/hero-neon-network.png)',
@@ -125,7 +121,7 @@ export default function Home() {
         />
 
         {/* Layer 2: Blurred neon spheres */}
-        <motion.div
+        <div
           className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
@@ -136,7 +132,7 @@ export default function Home() {
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <motion.div
+        <div
           className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-25"
           style={{
             background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)',
@@ -147,7 +143,7 @@ export default function Home() {
           transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <motion.div
+        <div
           className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20"
           style={{
             background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)',
@@ -162,45 +158,39 @@ export default function Home() {
       {/* CONTENT */}
       <div className="relative z-10">
         {/* BLOCK 1: HERO */}
-        <motion.section
+        <section
           className="min-h-screen flex items-center justify-center py-20 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4 text-center">
-            <motion.h1
+            <h1
               className="text-5xl md:text-7xl font-bold mb-6 font-grotesk"
               style={{
                 textShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(34, 211, 238, 0.2)'
               }}
-              {...fadeInUp}
             >
               NEIROmaster 5.0
-            </motion.h1>
+            </h1>
 
-            <motion.p
+            <p
               className="text-xl md:text-2xl text-gray-300 mb-4"
-              {...fadeInUp}
             >
               Система работы с нейросетями для digital-специалистов
-            </motion.p>
+            </p>
 
-            <motion.p
+            <p
               className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
-              {...fadeInUp}
             >
               Делайте задачи быстрее, качественнее и дороже — без потери экспертности и контроля
-            </motion.p>
+            </p>
 
-            <motion.p
+            <p
               className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
-              {...fadeInUp}
             >
               Не «курс по ИИ», а рабочая система под digital-профессии
-            </motion.p>
+            </p>
 
-            <motion.div
+            <div
               className="flex flex-col md:flex-row gap-4 justify-center mb-6"
-              {...fadeInUp}
             >
               <Button className="btn-neon-primary px-8 py-6 text-lg">
                 Начать обучение
@@ -208,29 +198,26 @@ export default function Home() {
               <Button className="btn-neon-secondary px-8 py-6 text-lg">
                 Посмотреть программу
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.p
+            <p
               className="text-sm text-gray-500"
-              {...fadeInUp}
             >
               Доступ сразу после оплаты · обучение в своём темпе
-            </motion.p>
+            </p>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 2: WHY AI DOESN'T WORK */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-5xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Почему нейросети не дают результата большинству специалистов
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
@@ -240,22 +227,20 @@ export default function Home() {
                   'нет понимания, как на этом зарабатывать',
                   'всё выглядит сложным и разрозненным'
                 ].map((item, idx) => (
-                  <motion.div
+                  <div
                     key={idx}
                     className="glass-panel rounded-lg p-4 border border-[rgba(59,130,246,0.35)]"
-                    whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#3B82F6]" style={{ boxShadow: "0 0 8px rgba(59, 130, 246, 0.5)" }}></div>
                       <p className="text-gray-400">{item}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
-              <motion.div
+              <div
                 className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] flex items-center justify-center"
-                whileHover={{ scale: 1.02 }}
               >
                 <svg viewBox="0 0 300 300" className="w-full h-full">
                   {/* Center node */}
@@ -276,32 +261,29 @@ export default function Home() {
                   <circle cx="150" cy="220" r="12" fill="#22D3EE" opacity="0.7" />
                   <circle cx="80" cy="150" r="12" fill="#22D3EE" opacity="0.7" />
                 </svg>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
+            <div
               className="mt-12 glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)] text-center"
-              {...fadeInUp}
             >
               <p className="text-lg text-gray-300">
                 <span style={{ color: '#22D3EE', fontWeight: 'bold' }}>NEIROmaster 5.0</span> — это сборка системы работы с ИИ, а не обзор сервисов и нейросетей.
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 3: FOR WHOM */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Кому подойдёт NEIROmaster
-            </motion.h2>
+            </h2>
 
             <Accordion type="single" collapsible className="space-y-3">
               {[
@@ -401,20 +383,18 @@ export default function Home() {
               ))}
             </Accordion>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 4: PROBLEMS */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Узнаёте себя?
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -425,27 +405,24 @@ export default function Home() {
                 "«Боюсь бесполезного обучения»",
                 "«Я боюсь не справиться, кажется очень сложно»"
               ].map((problem, idx) => (
-                <motion.div
+                <div
                   key={idx}
                   className="glass-panel rounded-lg p-4 border border-[rgba(59,130,246,0.35)]"
-                  whileHover={{ scale: 1.02 }}
                 >
                   <p className="text-gray-300">{problem}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 5: SOLUTION */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.div
+            <div
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] text-center"
-              {...fadeInUp}
             >
               <p className="text-sm text-gray-400 mb-4">Я ЗНАЮ КАК РЕШЕНИЕ ЭТИХ ЗАДАЧ</p>
               <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
@@ -454,22 +431,20 @@ export default function Home() {
               <p className="text-gray-400 mt-6">
                 Каждый модуль построен так, чтобы закрыть одну из главных проблем
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 6: ALWAYS ON */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               ⚡ ALWAYS ON
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -477,31 +452,28 @@ export default function Home() {
                 { icon: Code, title: "Старт сразу после оплаты", desc: "" },
                 { icon: Rocket, title: "Обучение в своём темпе", desc: "" }
               ].map((item, idx) => (
-                <motion.div
+                <div
                   key={idx}
                   className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)] text-center"
-                  whileHover={{ scale: 1.05 }}
                 >
                   <item.icon className="w-12 h-12 mx-auto mb-4" style={{ color: "#22D3EE", filter: "drop-shadow(0 0 8px rgba(34, 211, 238, 0.5))" }} />
                   <h3 className="text-lg font-semibold text-gray-200">{item.title}</h3>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 7: PROGRAM */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Программа курса
-            </motion.h2>
+            </h2>
 
             <Accordion type="single" collapsible className="space-y-3">
               {[
@@ -632,20 +604,18 @@ export default function Home() {
               ))}
             </Accordion>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 8: BONUSES */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Бонусы курса
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -656,14 +626,13 @@ export default function Home() {
                 { title: "Разборы", desc: "Лайфаки и кейсы" },
                 { title: "Мастермайнды", desc: "с автором курса (нацеленные на формирование точного понимания о монетизации и продажах услуг в новых реалиях)" }
               ].map((bonus, idx) => (
-                <motion.div
+                <div
                   key={idx}
                   className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)]"
-                  whileHover={{ scale: 1.05 }}
                 >
                   <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
                   <p className="text-gray-400">{bonus.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -690,20 +659,18 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 9: PRICING */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-5xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Выберите уровень поддержки, который вам подходит
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -748,13 +715,12 @@ export default function Home() {
                   popular: false
                 }
               ].map((plan, idx) => (
-                <motion.div
+                <div
                   key={idx}
                   className={`glass-panel rounded-lg p-6 border transition-all ${plan.popular ? 'scale-105 border-[rgba(34,211,238,0.5)]' : 'border-[rgba(59,130,246,0.35)]'}`}
                   style={{
                     background: plan.popular ? "rgba(34, 211, 238, 0.05)" : "rgba(10, 10, 14, 0.55)"
                   }}
-                  whileHover={{ scale: plan.popular ? 1.08 : 1.02 }}
                 >
                   {plan.popular && (
                     <div className="mb-4 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#22D3EE] text-black">
@@ -783,28 +749,25 @@ export default function Home() {
                   <Button className={plan.popular ? "btn-neon-primary w-full" : "btn-neon-secondary w-full"}>
                     Выбрать тариф
                   </Button>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 10: SPECIALIZATIONS */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-6 text-center"
-              {...fadeInUp}
             >
               А что если мне нужно больше?
-            </motion.h2>
+            </h2>
 
-            <motion.div
+            <div
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] text-center mb-8"
-              {...fadeInUp}
             >
               <p className="text-lg text-gray-300 mb-6">
                 Тогда после прохождения NEIROmaster выбирай специализацию — усиление под твою роль
@@ -818,26 +781,23 @@ export default function Home() {
               <Button className="btn-neon-primary">
                 Интересно узнать
               </Button>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 11: AUTHOR */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Автор курса
-            </motion.h2>
+            </h2>
 
-            <motion.div
+            <div
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)]"
-              {...fadeInUp}
             >
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 {/* Photo */}
@@ -877,22 +837,20 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 11.5: TESTIMONIALS */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-6xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Отзывы студентов
-            </motion.h2>
+            </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -903,7 +861,7 @@ export default function Home() {
                 { img: '/images/IMG_7707.jpg', alt: 'Отзыв 5' },
                 { img: '/images/IMG_58442.JPG', alt: 'Отзыв 6' }
               ].map((testimonial, index) => (
-                <motion.div
+                <div
                   key={index}
                   className="relative group"
                   initial={{ opacity: 0, y: 20 }}
@@ -928,24 +886,22 @@ export default function Home() {
                       className="w-full h-auto rounded-xl object-cover"
                     />
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* BLOCK 12: FAQ */}
-        <motion.section
+        <section
           className="py-20 md:py-32 relative"
-          {...fadeInUp}
         >
           <div className="container max-w-4xl mx-auto px-4">
-            <motion.h2
+            <h2
               className="text-3xl md:text-4xl font-bold mb-12 text-center"
-              {...fadeInUp}
             >
               Часто задаваемые вопросы
-            </motion.h2>
+            </h2>
 
             <Accordion type="single" collapsible className="space-y-3">
               {[
@@ -1017,7 +973,7 @@ export default function Home() {
               ))}
             </Accordion>
           </div>
-        </motion.section>
+        </section>
 
         {/* Footer */}
         <footer className="border-t border-[rgba(59,130,246,0.35)] py-8 relative">
