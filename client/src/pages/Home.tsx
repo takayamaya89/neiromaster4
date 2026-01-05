@@ -713,9 +713,45 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "Самостоятельно", price: "19 900 ₽", desc: "Без куратора и обратной связи", popular: false },
-                { title: "База с куратором", price: "24 900 ₽", desc: "Проверка заданий, поддержка, все бонусы", popular: true },
-                { title: "Куратор + Майя", price: "189 000 ₽", desc: "Личная работа, разбор проектов, приоритетная поддержка", popular: false }
+                { 
+                  title: "Самостоятельно", 
+                  price: "19 900 ₽", 
+                  desc: "Без куратора и обратной связи",
+                  details: [
+                    "Доступ ко всем материалам",
+                    "Видео-уроки в записи",
+                    "Все бонусы (PromptHub, 1000+ промптов)",
+                    "Комьюнити"
+                  ],
+                  popular: false 
+                },
+                { 
+                  title: "База с куратором", 
+                  price: "24 900 ₽", 
+                  desc: "Проверка заданий, поддержка, все бонусы",
+                  details: [
+                    "Всё из тарифа Самостоятельно",
+                    "Проверка мини-проектов",
+                    "Обратная связь от куратора",
+                    "Поддержка в чате",
+                    "Приоритет в вопросах"
+                  ],
+                  popular: true 
+                },
+                { 
+                  title: "Куратор + Майя", 
+                  price: "189 000 ₽", 
+                  desc: "Личная работа, разбор проектов, приоритетная поддержка",
+                  details: [
+                    "Всё из тарифа База с куратором",
+                    "Личная работа с Майей",
+                    "Разбор ваших проектов",
+                    "Приоритетная поддержка 24/7",
+                    "Консультации по специализациям",
+                    "Помощь с монетизацией"
+                  ],
+                  popular: false 
+                }
               ].map((plan, idx) => (
                 <motion.div
                   key={idx}
@@ -735,6 +771,14 @@ export default function Home() {
                     {plan.price}
                   </p>
                   <p className="text-gray-400 mb-6 text-sm">{plan.desc}</p>
+                  <ul className="mb-6 space-y-2 text-xs text-gray-400">
+                    {plan.details.map((detail, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-[#22D3EE] mt-1">✓</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <Button className={plan.popular ? "btn-neon-primary w-full" : "btn-neon-secondary w-full"}>
                     Выбрать
                   </Button>
