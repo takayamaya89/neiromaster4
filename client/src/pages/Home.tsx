@@ -517,7 +517,7 @@ export default function Home() {
             <div
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] text-center"
             >
-              <p className="text-sm text-gray-400 mb-4">Я ЗНАЮ КАК РЕШЕНИЕ ЭТИХ ЗАДАЧ</p>
+              <p className="text-sm text-gray-400 mb-4">У МЕНЯ ЕСТЬ РЕШЕНИЕ!</p>
               <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
                 NEIROmaster 5.0 — это про РЕЗУЛЬТАТ и СИСТЕМУ
               </h2>
