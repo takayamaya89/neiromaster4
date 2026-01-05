@@ -36,12 +36,12 @@ export default function PopupSystemActive({
           >
             {/* Заголовок */}
             <h3 className="text-sm font-semibold text-white mb-3">
-              Система активна
+              Кажется вы зависли
             </h3>
 
             {/* Текст */}
             <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-              Вы уже здесь.<br />
+              Вернитесь к обучению.<br />
               Места в NEIROMASTER 5.0 постепенно занимают.
             </p>
 

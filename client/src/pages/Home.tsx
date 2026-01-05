@@ -880,6 +880,59 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* BLOCK 11.5: TESTIMONIALS */}
+        <motion.section
+          className="py-20 md:py-32 relative"
+          {...fadeInUp}
+        >
+          <div className="container max-w-6xl mx-auto px-4">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center"
+              {...fadeInUp}
+            >
+              Отзывы студентов
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { img: '/images/IMG_7676.jpg', alt: 'Отзыв 1' },
+                { img: '/images/IMG_7677.jpg', alt: 'Отзыв 2' },
+                { img: '/images/IMG_7704.jpg', alt: 'Отзыв 3' },
+                { img: '/images/IMG_7705.jpg', alt: 'Отзыв 4' },
+                { img: '/images/IMG_7707.jpg', alt: 'Отзыв 5' },
+                { img: '/images/IMG_58442.JPG', alt: 'Отзыв 6' }
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] as const }}
+                  viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+                >
+                  {/* Glassmorphism background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Card container */}
+                  <div className="relative bg-gradient-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-2xl border border-blue-500/30 rounded-2xl p-4 overflow-hidden hover:border-blue-500/60 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
+                    {/* Neon glow on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_20px_rgba(59,130,246,0.2)]" />
+                    </div>
+                    
+                    {/* Image */}
+                    <img
+                      src={testimonial.img}
+                      alt={testimonial.alt}
+                      className="w-full h-auto rounded-xl object-cover"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
         {/* BLOCK 12: FAQ */}
         <motion.section
           className="py-20 md:py-32 relative"
