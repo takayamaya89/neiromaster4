@@ -107,22 +107,24 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
       {/* FLOATING GETCOURSE LOGO */}
-      <div className="fixed bottom-8 right-8 z-50" style={{
-        animation: 'float 3s ease-in-out infinite'
+      <div className="fixed bottom-6 right-6 z-50" style={{
+        animation: 'float 4s ease-in-out infinite'
       }}>
-        <img 
-          src="/images/getcourse-logo.png" 
-          alt="GetCourse" 
-          className="w-32 h-32 drop-shadow-2xl hover:scale-110 transition-transform cursor-pointer"
-          style={{
-            filter: 'drop-shadow(0 0 30px rgba(34, 211, 238, 0.5)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.3))'
-          }}
-        />
+        <div className="relative">
+          <img 
+            src="/images/getcourse-logo.png" 
+            alt="GetCourse" 
+            className="w-40 h-40 hover:scale-125 transition-transform duration-300 cursor-pointer"
+            style={{
+              filter: 'drop-shadow(0 0 40px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 80px rgba(59, 130, 246, 0.5)) drop-shadow(0 0 120px rgba(34, 211, 238, 0.3))'
+            }}
+          />
+        </div>
       </div>
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          50% { transform: translateY(-25px); }
         }
       `}</style>
       {/* ANIMATED BACKGROUND LAYERS */}
@@ -710,19 +712,30 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {[
-                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей" },
-                { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ" },
-                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста" },
-                { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%" },
-                { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка" },
-                { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов" }
+                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей", image: null },
+                { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ", image: "/images/masterclass-neurovoronka.jpg" },
+                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg" },
+                { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%", image: null },
+                { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка", image: null },
+                { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов", image: null }
               ].map((bonus, idx) => (
                 <div
                   key={idx}
-                  className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
+                  className="glass-panel rounded-lg overflow-hidden border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
-                  <p className="text-gray-400">{bonus.desc}</p>
+                  {bonus.image && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={bonus.image} 
+                        alt={bonus.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
+                    <p className="text-gray-400">{bonus.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
