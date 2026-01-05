@@ -113,48 +113,49 @@ export default function Home() {
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
         <motion.div
-          className="absolute inset-0 opacity-15"
+          className="absolute inset-0 opacity-25"
           style={{
-            backgroundImage: 'url(/hero-neon-network.png)',
+            backgroundImage: 'url(/images/hero-neon-network.png)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
           }}
-          animate={{ y: [0, 30, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' as const }}
+          animate={{ y: [0, 40, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
         {/* Layer 2: Blurred neon spheres */}
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20"
+          className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
             filter: 'blur(140px)',
             mixBlendMode: 'screen'
           }}
-          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' as const }}
+          animate={{ x: [0, 80, 0], y: [0, 50, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
         <motion.div
-          className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-15"
+          className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-25"
           style={{
             background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)',
             filter: 'blur(160px)',
             mixBlendMode: 'screen'
           }}
-          animate={{ x: [0, -40, 0], y: [0, -50, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' as const }}
+          animate={{ x: [0, -60, 0], y: [0, -70, 0] }}
+          transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
         <motion.div
-          className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-12"
+          className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20"
           style={{
             background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)',
             filter: 'blur(180px)',
             mixBlendMode: 'screen'
           }}
-          animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
+          animate={{ x: [0, 90, 0], y: [0, -60, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' as const }}
         />
       </div>
 
