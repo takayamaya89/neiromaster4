@@ -107,15 +107,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
       {/* FLOATING GETCOURSE LOGO */}
-      <div className="fixed bottom-8 right-8 z-50 animate-bounce" style={{
+      <div className="fixed bottom-8 right-8 z-50" style={{
         animation: 'float 3s ease-in-out infinite'
       }}>
         <img 
           src="/images/getcourse-logo.png" 
           alt="GetCourse" 
-          className="w-24 h-24 drop-shadow-lg hover:scale-110 transition-transform cursor-pointer"
+          className="w-32 h-32 drop-shadow-2xl hover:scale-110 transition-transform cursor-pointer"
           style={{
-            filter: 'drop-shadow(0 0 20px rgba(34, 211, 238, 0.4))'
+            filter: 'drop-shadow(0 0 30px rgba(34, 211, 238, 0.5)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.3))'
           }}
         />
       </div>
@@ -232,9 +232,25 @@ export default function Home() {
         <section
           className="py-20 md:py-32 relative"
         >
-          <div className="container max-w-4xl mx-auto px-4">
+          <div className="container max-w-6xl mx-auto px-4">
             <div className="glass-panel rounded-lg p-8 md:p-12 border border-[rgba(34,211,238,0.35)]">
-              <div className="text-center space-y-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left: Photo */}
+                <div className="flex justify-center order-2 md:order-1">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] to-[#22D3EE] rounded-xl blur-2xl opacity-60"></div>
+                    <img 
+                      src="/images/maya-galitskaya.png" 
+                      alt="Майя Галицкая" 
+                      className="relative rounded-xl w-72 h-auto object-cover border-2 border-[rgba(34,211,238,0.5)]"
+                      style={{
+                        boxShadow: "0 0 40px rgba(34, 211, 238, 0.4), 0 0 80px rgba(59, 130, 246, 0.3)"
+                      }}
+                    />
+                  </div>
+                </div>
+                {/* Right: Text */}
+                <div className="text-center md:text-left space-y-6 order-1 md:order-2">
                 <h2
                   className="text-3xl md:text-4xl font-bold"
                   style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
@@ -270,6 +286,7 @@ export default function Home() {
                       <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Оптимизировать затраты</span></p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
