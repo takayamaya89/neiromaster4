@@ -79,7 +79,7 @@ export default function Home() {
     if (systemActiveClosedAt && Date.now() - systemActiveClosedAt < 600000) return; // 10 минут
 
     const checkInactivity = setInterval(() => {
-      if (Date.now() - lastInactivityTime >= 30000) {
+      if (Date.now() - lastInactivityTime >= 40000) {
         setShowSystemActive(true);
         setSystemActiveShown(true);
         clearInterval(checkInactivity);
