@@ -113,7 +113,7 @@ export default function Home() {
         <img 
           src="/images/getcourse-full.jpg" 
           alt="GetCourse" 
-          className="w-48 h-48 hover:scale-110 transition-transform duration-300 cursor-pointer rounded-lg"
+          className="w-24 h-24 hover:scale-125 transition-transform duration-300 cursor-pointer rounded-lg"
           style={{
             filter: 'drop-shadow(0 0 30px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.5))'
           }}
