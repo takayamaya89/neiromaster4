@@ -175,19 +175,19 @@ export default function Home() {
             <p
               className="text-xl md:text-2xl text-gray-300 mb-4"
             >
-              Система работы с нейросетями для digital-специалистов
+              Система работы с нейросетями для digital и Экспертов
             </p>
 
             <p
               className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
             >
-              Делайте задачи быстрее, качественнее и дороже — без потери экспертности и контроля
+              Как делать задачи быстрее, качественнее и ДОРОЖЕ — без потери экспертности и контроля
             </p>
 
             <p
               className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
             >
-              Не «курс по ИИ», а рабочая система под digital-профессии
+              Не «курс по нейросетям», а рабочая СИСТЕМА работы с НЕЙРОСЕТЯМИ
             </p>
 
             <div
