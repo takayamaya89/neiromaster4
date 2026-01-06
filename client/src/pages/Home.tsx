@@ -2,6 +2,7 @@
 
 
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Zap, Code, Rocket } from 'lucide-react';
@@ -78,7 +79,7 @@ export default function Home() {
     if (systemActiveClosedAt && Date.now() - systemActiveClosedAt < 600000) return; // 10 минут
 
     const checkInactivity = setInterval(() => {
-      if (Date.now() - lastInactivityTime >= 30000) {
+      if (Date.now() - lastInactivityTime >= 40000) {
         setShowSystemActive(true);
         setSystemActiveShown(true);
         clearInterval(checkInactivity);
@@ -105,10 +106,29 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-hidden relative">
+      {/* FLOATING GETCOURSE LOGO */}
+      <div className="fixed bottom-6 right-6 z-50" style={{
+        animation: 'float 4s ease-in-out infinite'
+      }}>
+        <img 
+          src="/images/getcourse-full.jpg" 
+          alt="GetCourse" 
+          className="w-24 h-24 hover:scale-125 transition-transform duration-300 cursor-pointer rounded-lg"
+          style={{
+            filter: 'drop-shadow(0 0 30px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.5))'
+          }}
+        />
+      </div>
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-25px); }
+        }
+      `}</style>
       {/* ANIMATED BACKGROUND LAYERS */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Layer 1: Animated neural network background */}
-        <div
+        <motion.div
           className="absolute inset-0 opacity-25"
           style={{
             backgroundImage: 'url(/images/hero-neon-network.png)',
@@ -121,7 +141,7 @@ export default function Home() {
         />
 
         {/* Layer 2: Blurred neon spheres */}
-        <div
+        <motion.div
           className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
@@ -132,7 +152,7 @@ export default function Home() {
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <div
+        <motion.div
           className="absolute top-1/2 right-20 w-80 h-80 rounded-full opacity-25"
           style={{
             background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)',
@@ -143,7 +163,7 @@ export default function Home() {
           transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' as const }}
         />
 
-        <div
+        <motion.div
           className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20"
           style={{
             background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)',
@@ -174,19 +194,19 @@ export default function Home() {
             <p
               className="text-xl md:text-2xl text-gray-300 mb-4"
             >
-              Система работы с нейросетями для digital-специалистов
+              Система работы с нейросетями для digital и Экспертов
             </p>
 
             <p
               className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
             >
-              Делайте задачи быстрее, качественнее и дороже — без потери экспертности и контроля
+              Как делать задачи быстрее, качественнее и ДОРОЖЕ — без потери экспертности и контроля
             </p>
 
             <p
               className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
             >
-              Не «курс по ИИ», а рабочая система под digital-профессии
+              Не «курс по нейросетям», а рабочая СИСТЕМА работы с НЕЙРОСЕТЯМИ
             </p>
 
             <div
@@ -205,6 +225,71 @@ export default function Home() {
             >
               Доступ сразу после оплаты · обучение в своём темпе
             </p>
+          </div>
+        </section>
+
+        {/* BLOCK 1.5: MAYA POSITIONING */}
+        <section
+          className="py-20 md:py-32 relative"
+        >
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="glass-panel rounded-lg p-8 md:p-12 border border-[rgba(34,211,238,0.35)]">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left: Photo */}
+                <div className="flex justify-center order-2 md:order-1">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] to-[#22D3EE] rounded-xl blur-2xl opacity-60"></div>
+                    <img 
+                      src="/images/maya-galitskaya.png" 
+                      alt="Майя Галицкая" 
+                      className="relative rounded-xl w-72 h-auto object-cover border-2 border-[rgba(34,211,238,0.5)]"
+                      style={{
+                        boxShadow: "0 0 40px rgba(34, 211, 238, 0.4), 0 0 80px rgba(59, 130, 246, 0.3)"
+                      }}
+                    />
+                  </div>
+                </div>
+                {/* Right: Text */}
+                <div className="text-center md:text-left space-y-6 order-1 md:order-2">
+                <h2
+                  className="text-3xl md:text-4xl font-bold"
+                  style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
+                >
+                  Меня зовут <span style={{ color: "#FFFFFF" }}>МАЙЯ ГАЛИЦКАЯ</span>!
+                </h2>
+                <p className="text-xl md:text-2xl font-semibold text-gray-200">
+                  Я - <span style={{ color: "#22D3EE" }}>ЭКСПЕРТ</span>, которого вы <span style={{ color: "#22D3EE" }}>ЗАСЛУЖИЛИ</span>!
+                </p>
+                <p className="text-lg text-gray-300 mb-8">
+                  А ВЫ, как известно, <span style={{ color: "#22D3EE", fontWeight: "bold" }}>ЗАСЛУЖИВАЕТЕ ЛУЧШЕГО</span>!
+                </p>
+                
+                <div className="border-t border-[rgba(34,211,238,0.35)] pt-8 mt-8">
+                  <p className="text-gray-300 mb-6 text-base md:text-lg leading-relaxed">
+                    Я не учу пользоваться нейросетями, я учу <span style={{ color: "#22D3EE", fontWeight: "bold" }}>встраивать их в работу</span>, чтобы:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Создавать стабильный рост аудитории</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Очередь из клиентов</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Кратно увеличивать заработок</span></p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
+                      <p className="text-gray-300"><span style={{ color: "#22D3EE", fontWeight: "bold" }}>Оптимизировать затраты</span></p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -242,25 +327,7 @@ export default function Home() {
               <div
                 className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] flex items-center justify-center"
               >
-                <svg viewBox="0 0 300 300" className="w-full h-full">
-                  {/* Center node */}
-                  <circle cx="150" cy="150" r="20" fill="#3B82F6" opacity="0.8" />
-                  <circle cx="150" cy="150" r="20" fill="none" stroke="#3B82F6" strokeWidth="2" opacity="0.3">
-                    <animate attributeName="r" from="20" to="40" dur="2s" repeatCount="indefinite" />
-                  </circle>
-
-                  {/* Connecting lines */}
-                  <line x1="150" y1="150" x2="150" y2="80" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="220" y2="150" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="150" y2="220" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-                  <line x1="150" y1="150" x2="80" y2="150" stroke="#22D3EE" strokeWidth="1" opacity="0.5" />
-
-                  {/* Peripheral nodes */}
-                  <circle cx="150" cy="80" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="220" cy="150" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="150" cy="220" r="12" fill="#22D3EE" opacity="0.7" />
-                  <circle cx="80" cy="150" r="12" fill="#22D3EE" opacity="0.7" />
-                </svg>
+                <img src="/images/brain-circuit.png" alt="AI Brain Circuit" className="w-full h-full object-contain" />
               </div>
             </div>
 
@@ -424,7 +491,7 @@ export default function Home() {
             <div
               className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] text-center"
             >
-              <p className="text-sm text-gray-400 mb-4">Я ЗНАЮ КАК РЕШЕНИЕ ЭТИХ ЗАДАЧ</p>
+              <p className="text-sm text-gray-400 mb-4">У МЕНЯ ЕСТЬ РЕШЕНИЕ!</p>
               <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
                 NEIROmaster 5.0 — это про РЕЗУЛЬТАТ и СИСТЕМУ
               </h2>
@@ -612,28 +679,59 @@ export default function Home() {
         >
           <div className="container max-w-4xl mx-auto px-4">
             <h2
-              className="text-3xl md:text-4xl font-bold mb-12 text-center"
+              className="text-3xl md:text-4xl font-bold mb-6 text-center"
             >
               Бонусы курса
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="text-center mb-8 p-6 glass-panel rounded-lg border border-[rgba(59,130,246,0.35)]">
+              <p className="text-xl font-semibold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
+                При покупке прямо сейчас ты получаешь бонусов на сумму 55.000 рублей!
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               {[
-                { title: "PromptHub", desc: "постоянно обновляющаяся база знаний по ИИ" },
-                { title: "Промпты на любые задачи", desc: "1000+" },
-                { title: "Мастер-классы", desc: "Живые эфиры с Майей" },
-                { title: "Комьюнити и поддержка", desc: "куратора внутри клуба" },
-                { title: "Разборы", desc: "Лайфаки и кейсы" },
-                { title: "Мастермайнды", desc: "с автором курса (нацеленные на формирование точного понимания о монетизации и продажах услуг в новых реалиях)" }
+                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей", image: null },
+                { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ", image: "/images/masterclass-neurovoronka.jpg" },
+                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg" },
+                { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%", image: null },
+                { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка", image: null },
+                { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов", image: null }
               ].map((bonus, idx) => (
                 <div
                   key={idx}
-                  className="glass-panel rounded-lg p-6 border border-[rgba(34,211,238,0.35)]"
+                  className="glass-panel rounded-lg overflow-hidden border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
-                  <p className="text-gray-400">{bonus.desc}</p>
+                  {bonus.image && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={bonus.image} 
+                        alt={bonus.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-200 mb-2" style={{ color: "#22D3EE" }}>{bonus.title}</h3>
+                    <p className="text-gray-400">{bonus.desc}</p>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            <div className="glass-panel rounded-lg p-8 border border-[rgba(59,130,246,0.35)]">
+              <h3 className="text-xl font-semibold text-gray-200 mb-6 text-center">Дополнительно включено:</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2" style={{ color: "#3B82F6" }}>PromptHub</p>
+                  <p className="text-gray-400">постоянно обновляющаяся база знаний по ИИ</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2" style={{ color: "#3B82F6" }}>1000+</p>
+                  <p className="text-gray-400">промптов на любые задачи</p>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 space-y-3 text-gray-400">
@@ -861,7 +959,7 @@ export default function Home() {
                 { img: '/images/IMG_7707.jpg', alt: 'Отзыв 5' },
                 { img: '/images/IMG_58442.JPG', alt: 'Отзыв 6' }
               ].map((testimonial, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="relative group"
                   initial={{ opacity: 0, y: 20 }}
@@ -886,7 +984,7 @@ export default function Home() {
                       className="w-full h-auto rounded-xl object-cover"
                     />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
