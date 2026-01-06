@@ -694,7 +694,7 @@ export default function Home() {
               {[
                 { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей", image: "/images/content-factory-banner.jpg" },
                 { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ", image: "/images/masterclass-neurovoronka.jpg" },
-                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg", marginTop: "3mm" },
+                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg", marginTop: "15mm" },
                 { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%", image: null },
                 { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка", image: null },
                 { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов", image: null }
@@ -705,7 +705,7 @@ export default function Home() {
                   style={bonus.marginTop ? { marginTop: bonus.marginTop } : {}}
                 >
                   {bonus.image && (
-                    <div className={`relative ${idx === 1 || idx === 2 ? 'h-64' : 'h-48'} overflow-hidden`}>
+                    <div className={`relative ${idx === 0 || idx === 1 || idx === 2 ? 'h-64' : 'h-48'} overflow-hidden`}>
                       <img 
                         src={bonus.image} 
                         alt={bonus.title}
