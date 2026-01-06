@@ -704,7 +704,7 @@ export default function Home() {
                   className="glass-panel rounded-lg overflow-hidden border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
                 >
                   {bonus.image && (
-                    <div className="relative h-48 overflow-hidden">
+                    <div className={`relative ${idx === 1 || idx === 2 ? 'h-64' : 'h-48'} overflow-hidden`}>
                       <img 
                         src={bonus.image} 
                         alt={bonus.title}
