@@ -692,9 +692,9 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {[
-                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей", image: null },
+                { title: "🎬 Контент-завод", desc: "Мастер-класс по созданию контента с помощью нейросетей", image: "/images/content-factory-banner.jpg" },
                 { title: "🌊 Нейроворонка", desc: "Мастер-класс по построению продающих воронок с ИИ", image: "/images/masterclass-neurovoronka.jpg" },
-                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg" },
+                { title: "📈 13 000 подписчиков в месяц без таргета", desc: "Мастер-класс с проверенной стратегией роста", image: "/images/masterclass-growth.jpg", marginTop: "3mm" },
                 { title: "💰 Секретный гайд", desc: "Как оплачивать нейросети со скидкой до 90%", image: null },
                 { title: "🤖 Чат-боты и автоматизации", desc: "Настройка в блоге + 12 связок для заработка", image: null },
                 { title: "⭐ 5 Лучших ИИ-ассистентов", desc: "Полный гайд по использованию топовых ассистентов", image: null }
@@ -702,6 +702,7 @@ export default function Home() {
                 <div
                   key={idx}
                   className="glass-panel rounded-lg overflow-hidden border border-[rgba(34,211,238,0.35)] hover:border-[rgba(34,211,238,0.6)] transition-all duration-300"
+                  style={bonus.marginTop ? { marginTop: bonus.marginTop } : {}}
                 >
                   {bonus.image && (
                     <div className={`relative ${idx === 1 || idx === 2 ? 'h-64' : 'h-48'} overflow-hidden`}>
