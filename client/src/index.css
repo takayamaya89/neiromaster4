@@ -54,15 +54,15 @@
   --chart-5: #22D3EE;
   --radius: 0.65rem;
   --background: #F8FAFC;
-  --foreground: #1E293B;
+  --foreground: #0F172A;
   --card: rgba(248, 250, 252, 0.95);
-  --card-foreground: #1E293B;
+  --card-foreground: #0F172A;
   --popover: rgba(248, 250, 252, 0.95);
-  --popover-foreground: #1E293B;
+  --popover-foreground: #0F172A;
   --secondary: #22D3EE;
   --secondary-foreground: #0A0A0A;
   --muted: rgba(100, 116, 139, 0.2);
-  --muted-foreground: #64748B;
+  --muted-foreground: #334155;
   --accent: #8B5CF6;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
@@ -71,7 +71,7 @@
   --input: rgba(59, 130, 246, 0.15);
   --ring: #3B82F6;
   --sidebar: rgba(248, 250, 252, 0.95);
-  --sidebar-foreground: #1E293B;
+  --sidebar-foreground: #0F172A;
   --sidebar-accent: #3B82F6;
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: rgba(59, 130, 246, 0.25);
@@ -86,8 +86,8 @@
   --neon-glow-violet: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3);
   
   /* Glass panel */
-  --glass-bg: rgba(248, 250, 252, 0.85);
-  --glass-border: rgba(59, 130, 246, 0.25);
+  --glass-bg: rgba(248, 250, 252, 0.95);
+  --glass-border: rgba(59, 130, 246, 0.4);
   --glass-blur: blur(18px);
 }
 
@@ -177,29 +177,29 @@
 
   /* Glass Panel Component */
   .glass-panel {
-    background: rgba(248, 250, 252, 0.85);
+    background: rgba(248, 250, 252, 0.95);
     backdrop-filter: blur(18px);
-    border: 1px solid rgba(59, 130, 246, 0.25);
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 18px;
     box-shadow: 
-      0 0 60px rgba(59, 130, 246, 0.15),
-      inset 0 0 40px rgba(59, 130, 246, 0.08);
+      0 0 80px rgba(59, 130, 246, 0.25),
+      inset 0 0 60px rgba(59, 130, 246, 0.12);
   }
 
   /* Neon Text Shadow */
   .neon-text {
-    text-shadow: 0 0 28px rgba(59, 130, 246, 0.25);
-    color: #1E293B;
+    text-shadow: 0 0 28px rgba(59, 130, 246, 0.35);
+    color: #0F172A;
   }
 
   .neon-text-cyan {
-    text-shadow: 0 0 28px rgba(34, 211, 238, 0.25);
-    color: #1E293B;
+    text-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+    color: #0F172A;
   }
 
   .neon-text-violet {
-    text-shadow: 0 0 28px rgba(139, 92, 246, 0.25);
-    color: #1E293B;
+    text-shadow: 0 0 28px rgba(139, 92, 246, 0.35);
+    color: #0F172A;
   }
 
   /* Neon Glow Objects */
@@ -246,20 +246,20 @@
 
   /* Accordion Neon */
   .accordion-neon {
-    background: rgba(248, 250, 252, 0.85);
+    background: rgba(248, 250, 252, 0.95);
     backdrop-filter: blur(18px);
-    border: 1px solid rgba(59, 130, 246, 0.25);
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 18px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .accordion-neon[data-state="open"] {
-    background: rgba(248, 250, 252, 0.95);
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.12);
+    background: rgba(248, 250, 252, 0.98);
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);
   }
 
   .accordion-neon:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.18);
   }
 
   /* Heading with text shadow */
