@@ -188,35 +188,35 @@ export default function Home() {
                 textShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(34, 211, 238, 0.2)'
               }}
             >
-              NEIROmaster 5.0
+              NeiroMaster 5.0: Твоя автономная операционная система
             </h1>
 
             <p
               className="text-xl md:text-2xl text-gray-300 mb-4"
             >
-              Система работы с нейросетями для digital и Экспертов
+              Масштабируй доход, а не собственное выгорание.
             </p>
 
             <p
               className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
             >
-              Как делать задачи быстрее, качественнее и ДОРОЖЕ — без потери экспертности и контроля
+              Хватит продавать своё время. За 21 день мы переводим твою деятельность с режима "я делаю всё сам и сейчас помру" на системный ИИ-конвейер: освобождаем 30+ часов в неделю, снимаем рутину и делаем так, чтобы всё работало, пока ты спишь.
             </p>
 
             <p
               className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
             >
-              Не «курс по нейросетям», а рабочая СИСТЕМА работы с НЕЙРОСЕТЯМИ
+              Результат за 21 день — собственный ИИ-цех с настроенными связками
             </p>
 
             <div
               className="flex flex-col md:flex-row gap-4 justify-center mb-6"
             >
               <Button className="btn-neon-primary px-8 py-6 text-lg">
-                Начать обучение
+                Начать за 21 день
               </Button>
               <Button className="btn-neon-secondary px-8 py-6 text-lg">
-                Посмотреть программу
+                Узнать больше
               </Button>
             </div>
 
@@ -493,7 +493,7 @@ export default function Home() {
             >
               <p className="text-sm text-gray-400 mb-4">У МЕНЯ ЕСТЬ РЕШЕНИЕ!</p>
               <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#22D3EE", textShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}>
-                NEIROmaster 5.0 — это про РЕЗУЛЬТАТ и СИСТЕМУ
+                NeiroMaster 5.0: Твоя автономная операционная система — это про РЕЗУЛЬТАТ и СИСТЕМУ
               </h2>
               <p className="text-gray-400 mt-6">
                 Каждый модуль построен так, чтобы закрыть одну из главных проблем
