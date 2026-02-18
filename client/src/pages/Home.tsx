@@ -854,36 +854,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BLOCK 10: SPECIALIZATIONS */}
-        <section
-          className="py-20 md:py-32 relative"
-        >
-          <div className="container max-w-4xl mx-auto px-4">
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-6 text-center"
-            >
-              А что если мне нужно больше?
-            </h2>
-
-            <div
-              className="glass-panel rounded-lg p-8 border border-[rgba(34,211,238,0.35)] text-center mb-8"
-            >
-              <p className="text-lg text-gray-300 mb-6">
-                Тогда после прохождения NEIROmaster выбирай специализацию — усиление под твою роль
-              </p>
-              <p className="text-gray-400 mb-6">Закрытые специализации чтобы:</p>
-              <div className="space-y-2 text-gray-400 mb-8">
-                <p>✓ УВЕЛИЧИТЬ ДОХОД МАСШТАБНО</p>
-                <p>✓ БРАТЬ БОЛЬШИЕ И СЛОЖНЫЕ ПРОЕКТЫ</p>
-                <p>✓ ОБРЕСТИ НОВУЮ ПРОФЕССИЮ С НОВЫМИ МОЩНЫМИ НАВЫКАМИ</p>
-              </div>
-              <Button className="btn-neon-primary">
-                Интересно узнать
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* BLOCK 11: AUTHOR */}
         <section
           className="py-20 md:py-32 relative"
