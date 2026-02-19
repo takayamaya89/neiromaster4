@@ -181,50 +181,69 @@ export default function Home() {
         <section
           className="min-h-screen flex items-center justify-center py-20 relative"
         >
-          <div className="container max-w-4xl mx-auto px-4 text-center">
+          <div className="container max-w-5xl mx-auto px-4 text-center">
+            {/* Badge */}
+            <div className="inline-block mb-6 px-4 py-2 rounded-full border border-[rgba(34,211,238,0.4)] bg-[rgba(34,211,238,0.08)]">
+              <span className="text-sm font-medium" style={{ color: '#22D3EE' }}>21 день до результата</span>
+            </div>
+
             <h1
-              className="text-5xl md:text-7xl font-bold mb-6 font-grotesk"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-grotesk leading-tight"
               style={{
                 textShadow: '0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(34, 211, 238, 0.2)'
               }}
             >
-              NeiroMaster 5.0: Твоя автономная операционная система
+              Масштабируй доход,<br />
+              <span style={{ color: '#22D3EE' }}>а не выгорание</span>
             </h1>
 
             <p
-              className="text-xl md:text-2xl text-gray-300 mb-4"
+              className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
             >
-              Масштабируй доход, а не собственное выгорание.
+              Переведи свою работу на ИИ-конвейер за 21 день.
+              Освободи 30+ часов в неделю — система пашет, пока ты спишь.
             </p>
 
-            <p
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
-            >
-              Хватит продавать своё время. За 21 день мы переводим твою деятельность с режима "я делаю всё сам и сейчас помру" на системный ИИ-конвейер: освобождаем 30+ часов в неделю, снимаем рутину и делаем так, чтобы всё работало, пока ты спишь.
-            </p>
 
-            <p
-              className="text-base md:text-lg text-gray-500 mb-12 glass-panel rounded-lg p-4 border border-[rgba(34,211,238,0.35)]"
-            >
-              Результат за 21 день — собственный ИИ-цех с настроенными связками
-            </p>
-
-            <div
-              className="flex flex-col md:flex-row gap-4 justify-center mb-6"
-            >
-              <Button className="btn-neon-primary px-8 py-6 text-lg">
-                Начать за 21 день
-              </Button>
-              <Button className="btn-neon-secondary px-8 py-6 text-lg">
-                Узнать больше
-              </Button>
+            {/* 3 ключевых буллета */}
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center mb-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(34, 211, 238, 0.15)', border: '1px solid rgba(34, 211, 238, 0.4)' }}>
+                  <Zap className="w-5 h-5" style={{ color: '#22D3EE' }} />
+                </div>
+                <span className="text-gray-200 text-sm md:text-base font-medium">30+ часов свободы</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(59, 130, 246, 0.15)', border: '1px solid rgba(59, 130, 246, 0.4)' }}>
+                  <Rocket className="w-5 h-5" style={{ color: '#3B82F6' }} />
+                </div>
+                <span className="text-gray-200 text-sm md:text-base font-medium">Доход на автопилоте</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(139, 92, 246, 0.15)', border: '1px solid rgba(139, 92, 246, 0.4)' }}>
+                  <Code className="w-5 h-5" style={{ color: '#8B5CF6' }} />
+                </div>
+                <span className="text-gray-200 text-sm md:text-base font-medium">Статус Архитектора</span>
+              </div>
             </div>
 
-            <p
-              className="text-sm text-gray-500"
-            >
-              Доступ сразу после оплаты · обучение в своём темпе
-            </p>
+            {/* CTA */}
+            <div className="flex flex-col items-center gap-4 mb-6">
+              <a
+                href="https://course.takayamaya.ru/pl/lite/widget/widget/buy/891858"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-5 rounded-xl font-bold text-lg md:text-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]"
+                style={{
+                  background: 'linear-gradient(135deg, #3B82F6, #22D3EE)',
+                  color: '#FFFFFF',
+                  boxShadow: '0 0 30px rgba(34, 211, 238, 0.3)'
+                }}
+              >
+                Начать за 21 день
+              </a>
+              <p className="text-sm text-gray-500">Доступ сразу после оплаты · обучение в своём темпе</p>
+            </div>
           </div>
         </section>
 
@@ -257,12 +276,7 @@ export default function Home() {
                 >
                   Меня зовут <span style={{ color: "#FFFFFF" }}>МАЙЯ ГАЛИЦКАЯ</span>!
                 </h2>
-                <p className="text-xl md:text-2xl font-semibold text-gray-200">
-                  Я - <span style={{ color: "#22D3EE" }}>ЭКСПЕРТ</span>, которого вы <span style={{ color: "#22D3EE" }}>ЗАСЛУЖИЛИ</span>!
-                </p>
-                <p className="text-lg text-gray-300 mb-8">
-                  А ВЫ, как известно, <span style={{ color: "#22D3EE", fontWeight: "bold" }}>ЗАСЛУЖИВАЕТЕ ЛУЧШЕГО</span>!
-                </p>
+
                 
                 <div className="border-t border-[rgba(34,211,238,0.35)] pt-8 mt-8">
                   <p className="text-gray-300 mb-6 text-base md:text-lg leading-relaxed">
@@ -480,6 +494,22 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 text-center">
+              <a
+                href="https://course.takayamaya.ru/pl/lite/widget/widget/buy/891858"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, #3B82F6, #22D3EE)',
+                  color: '#FFFFFF',
+                  boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)'
+                }}
+              >
+                это точно про меня
+              </a>
+            </div>
           </div>
         </section>
 
@@ -513,11 +543,10 @@ export default function Home() {
               ⚡ ALWAYS ON
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: Zap, title: "Доступна в любое время", desc: "" },
-                { icon: Code, title: "Старт сразу после оплаты", desc: "" },
-                { icon: Rocket, title: "Обучение в своём темпе", desc: "" }
+                { icon: Zap, title: "самые актуальные материалы по рынку", desc: "" },
+                { icon: Rocket, title: "постоянное обновление нейросетей и связок", desc: "" }
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -542,87 +571,67 @@ export default function Home() {
               Программа курса
             </h2>
 
+            <p className="text-center text-gray-400 mb-12 text-lg">3 недели, после которых работа уже не выглядит прежней.<br/>Вы не изучаете нейросети. Вы учитесь управлять интеллектом, визуалом и продажами.</p>
+
             <Accordion type="single" collapsible className="space-y-3">
               {[
                 {
-                  value: "week0",
-                  title: "НЕДЕЛЯ 0 — ВВОДНЫЙ УРОК. ТЕХНИЧЕСКАЯ БАЗА",
-                  result: "Полностью готовая техническая база для работы со всеми инструментами курса",
-                  content: [
-                    "VPN и стабильные подключения",
-                    "Доступ к недоступным ИИ-сервисам",
-                    "Зарубежные виртуальные карты",
-                    "Безопасная оплата подписок",
-                    "Оптимальная конфигурация: ноутбук + телефон"
-                  ]
-                },
-                {
                   value: "week1",
-                  title: "НЕДЕЛЯ 1 — ТЕКСТОВЫЕ ИИ, ПРОМПТИНГ, АССИСТЕНТЫ, ПЕРВЫЕ ДЕНЬГИ",
-                  result: "Участник умеет управлять ИИ, создавать ассистентов и понимает, как зарабатывать на этих навыках",
-                  content: [
-                    "Текстовые нейросети (GPT / Claude / DeepSeek / Gemini / Qwen)",
-                    "Профессиональный промптинг",
-                    "Тёмная промпт-инженерия и СОЗДАНИЕ САМЫХ МОЩНЫХ ПРОМПТОВ",
-                    "Создание ИИ-ассистентов ПОД ЗАДАЧИ И МОНЕТИЗАЦИЮ",
-                    "Первые задачи для заработка + ценообразование",
-                    "Анализ ЦА и конкурентов (таблицы, графики)"
+                  title: "НЕДЕЛЯ 1 — «А ЧТО, ТАК МОЖНО БЫЛО??»",
+                  subtitle: "Текстовые ИИ • Промптинг • Ассистенты • Первые деньги",
+                  sections: [
+                    { heading: "Текстовые нейросети", items: ["ChatGPT (глубокая работа + GPTs)", "Claude", "DeepSeek", "Gemini", "Qwen и другие"] },
+                    { heading: "Профессиональный промптинг", items: ["архитектура запроса", "экспертные и аналитические промпты", "«тёмная магия» промптинга", "реверсивный промптинг", "разбиение сложных задач на систему промптов", "использование ролей и многоуровневых диалогов"] },
+                    { heading: "Создание ИИ-ассистентов", items: ["контент-ассистент", "аналитик или личный помощник", "коммерческий ассистент", "как прописывать систему и тестировать"] },
+                    { heading: "Первые деньги", items: ["20 быстрых задач, за которые платят", "тексты, анализ, мини-проекты", "ценообразование", "ускорение выполнения через ассистентов"] },
+                    { heading: "Анализ ЦА и конкурентов", items: ["JTBD и еще 5 способов анализа ЦА", "поиск болей и инсайтов", "гипотезы и таблицы", "визуализация данных", "Анализ конкурентов и конкурентная разведка"] }
                   ],
+                  tools: "Google Sheets AI • Perplexity • PromptHub",
                   project: "Команда ИИ-ассистентов под реальные рабочие задачи",
-                  projectResult: [
-                    "Несколько ассистентов (контент / аналитика / коммерция)",
-                    "Система делегирования задач ИИ",
-                    "Готовая основа для заработка и масштабирования"
-                  ]
+                  projectResult: ["несколько ассистентов (контент / аналитика / коммерция)", "система делегирования задач ИИ", "база быстрых платных услуг", "готовая основа для заработка"],
+                  weekResult: ["управляете ИИ, а не «общаетесь с ботом»", "создаёте профессиональные промпты", "автоматизируете тексты и аналитику", "можете брать первые оплачиваемые задачи", "анализируете рынок за минуты"],
+                  weekQuote: "Вы уже быстрее 90% специалистов."
                 },
                 {
                   value: "week2",
-                  title: "НЕДЕЛЯ 2 — ВИЗУАЛ, ВИДЕО, УПАКОВКА, МАРКЕТПЛЕЙСЫ, ОЗВУЧКА",
-                  result: "Участник самостоятельно создаёт визуал и видео под коммерческие задачи",
-                  content: [
-                    "Графические нейросети (Midjourney, Krea, NanoBanana, Freepic и другие)",
-                    "Видео-нейросети (Kling, Hiffsfield, VEO 3 и многие другие)",
-                    "Айдентика и упаковка",
-                    "Карточки маркетплейсов",
-                    "Цифровые аватары, озвучка, монтаж (HeyGen, ElevenLabs, Minimax, Captions, Submagic и другие)"
+                  title: "НЕДЕЛЯ 2 — «МОЙ ШОК в ШОКЕ, НЕ МОГУ ОСТАНОВИТЬСЯ»",
+                  subtitle: "Визуал • Видео • Упаковка • Маркетплейсы • Озвучка",
+                  sections: [
+                    { heading: "Графические нейросети", items: ["Midjourney", "Krea", "Leonardo AI", "Recraft", "NanoBanana", "Freepik AI"] },
+                    { heading: "Видео-нейросети", items: ["Kling", "Runway", "Pika", "Higgsfield", "VEO"] },
+                    { heading: "Айдентика и упаковка", items: ["создание фирменного стиля", "визуальная система бренда", "упаковка продукта"] },
+                    { heading: "Карточки маркетплейсов", items: ["улучшение фото товаров", "создание продающих изображений", "визуальное позиционирование продукта"] },
+                    { heading: "Цифровой аватар и озвучка", items: ["HeyGen", "ElevenLabs", "Suno", "Minimax", "Captions / Submagic", "клонирование голоса", "сборка видео"] }
                   ],
                   project: "Клип, созданный полностью с помощью нейросетей",
-                  projectResult: [
-                    "Видео/клип",
-                    "Визуал",
-                    "Озвучка",
-                    "Монтаж",
-                    "Готовый кейс для портфеля или клиента"
-                  ]
+                  projectResult: ["видео/клип", "визуал", "озвучка", "монтаж", "готовый кейс для портфеля или клиента"],
+                  weekResult: ["создаёте визуал без дизайнеров", "делаете видео без съёмки", "упаковываете продукт профессионально", "создаёте продающие карточки", "создаёте цифровых аватаров и голос"],
+                  weekQuote: "Вы становитесь мини-продакшеном."
                 },
                 {
                   value: "week3",
-                  title: "НЕДЕЛЯ 3 — БОТЫ, МИНИ-ВОРОНКИ, ПРИКЛАДНЫЕ ИНСТРУМЕНТЫ",
-                  result: "Участник умеет собирать продающие нейросистемы",
-                  content: [
-                    "Чат-боты через SendPulse",
-                    "Чат-боты через ChatPlace",
-                    "Нейроворонка «Связка взрывного роста»",
-                    "VibeCoding через Manus (фирменный стиль и голос)"
+                  title: "НЕДЕЛЯ 3 — «ЭТО ЧТО Я СДЕЛАЛ(А)??»",
+                  subtitle: "Боты • Мини-воронки • AI-агенты • Автоматизация продаж",
+                  sections: [
+                    { heading: "Чат-боты через SendPulse", items: ["логика", "цепочки сообщений", "выдача материалов", "автоматизация общения"] },
+                    { heading: "Чат-боты через ChatPlace", items: ["Выдача по кодовому слову", "сценарии диалогов", "тестирование"] },
+                    { heading: "Нейроворонка ВЗРЫВНОГО РОСТА", items: ["путь клиента", "автопрогрев", "вовлечение и дожим", "система продаж 24/7", "Создание мини продукта"] },
+                    { heading: "Vibe-coding и AI-агенты", items: ["Manus", "Make (Integromat)", "автоматизация задач", "агенты для бизнеса и личной работы"] }
                   ],
+                  tools: "Viral — для создания контентной матрицы",
                   project: "Готовая нейроворонка с оффером",
-                  projectResult: [
-                    "Бот",
-                    "Ассистент",
-                    "Логика продаж",
-                    "Оффер",
-                    "Готовая система под запуск или клиента"
-                  ]
+                  projectResult: ["чат-бот", "контент матрица с готовым контентом", "логика продаж", "оффер", "система под запуск или клиента"],
+                  weekResult: ["создаёте чат-ботов", "автоматизируете коммуникации", "строите мини-воронки продаж", "создаёте AI-агентов", "запускаете систему, работающую без вас"],
+                  weekQuote: "Вы перестаёте работать руками. Вы управляете системой."
                 },
                 {
                   value: "final",
-                  title: "ЗАКЛЮЧИТЕЛЬНЫЙ УРОК",
-                  result: "Интеграция всех навыков + дорожная карта роста",
-                  content: [
-                    "Как развиваться дальше",
-                    "Как повышать чек",
-                    "Как выбрать специализацию"
-                  ]
+                  title: "ФИНАЛ",
+                  subtitle: "",
+                  sections: [],
+                  finalBlock: true,
+                  finalResults: ["скорость работы ↑ в 5–10 раз", "появляется новый источник дохода", "задачи решаются за минуты", "появляется портфель кейсов", "формируется система продаж"],
+                  finalQuote: "И самое интересное: возврат к прежнему способу работы вызывает лёгкое недоумение."
                 }
               ].map((item) => (
                 <AccordionItem
@@ -634,36 +643,87 @@ export default function Home() {
                     {item.title}
                   </AccordionTrigger>
                   <AccordionContent className="pt-6 space-y-6">
-                    <div>
-                      <p className="font-semibold text-gray-200 mb-3" style={{ color: "#22D3EE" }}>🎯 Итог:</p>
-                      <p className="text-gray-400">{item.result}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-200 mb-3">Что внутри:</h4>
-                      <div className="space-y-2">
-                        {item.content.map((text, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#3B82F6]" style={{ boxShadow: "0 0 8px rgba(59, 130, 246, 0.5)" }}></div>
-                            <p className="text-gray-400">{text}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {item.project && (
+                    {item.subtitle && (
+                      <p className="text-[#22D3EE] font-medium text-base">{item.subtitle}</p>
+                    )}
+
+                    {item.finalBlock ? (
                       <>
                         <div>
-                          <h4 className="font-semibold text-gray-200 mb-3">✅ МИНИ-ПРОЕКТ:</h4>
-                          <p className="text-gray-400 font-semibold mb-3">{item.project}</p>
-                          <p className="text-gray-400 mb-2 font-semibold">На выходе:</p>
+                          <p className="font-semibold text-gray-200 mb-3">После 3 недель:</p>
                           <div className="space-y-2">
-                            {item.projectResult.map((result, idx) => (
+                            {item.finalResults.map((r, idx) => (
                               <div key={idx} className="flex items-start gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#22D3EE]" style={{ boxShadow: "0 0 8px rgba(34, 211, 238, 0.5)" }}></div>
-                                <p className="text-gray-400">{result}</p>
+                                <span className="text-green-400 mt-0.5">✔</span>
+                                <p className="text-gray-300">{r}</p>
                               </div>
                             ))}
                           </div>
                         </div>
+                        <p className="text-gray-400 italic border-l-2 border-[#22D3EE] pl-4">{item.finalQuote}</p>
+                      </>
+                    ) : (
+                      <>
+                        {/* Sections */}
+                        <div className="space-y-5">
+                          <h4 className="font-semibold text-gray-200">Что внутри:</h4>
+                          {item.sections.map((section, sIdx) => (
+                            <div key={sIdx}>
+                              <p className="font-semibold text-gray-300 mb-2">{section.heading}</p>
+                              <div className="space-y-1.5 pl-4">
+                                {section.items.map((text, idx) => (
+                                  <div key={idx} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#3B82F6]" style={{ boxShadow: "0 0 8px rgba(59, 130, 246, 0.5)" }}></div>
+                                    <p className="text-gray-400">{text}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Tools */}
+                        {item.tools && (
+                          <div className="bg-[rgba(34,211,238,0.08)] rounded-lg p-4 border border-[rgba(34,211,238,0.2)]">
+                            <p className="text-sm text-gray-400"><span className="text-[#22D3EE]">🤖 Дополнительно используемые инструменты:</span> {item.tools}</p>
+                          </div>
+                        )}
+
+                        {/* Mini-project */}
+                        {item.project && (
+                          <div>
+                            <h4 className="font-semibold text-gray-200 mb-3">✅ МИНИ-ПРОЕКТ НЕДЕЛИ:</h4>
+                            <p className="text-gray-300 font-semibold mb-3">{item.project}</p>
+                            <p className="text-gray-400 mb-2 font-semibold">На выходе:</p>
+                            <div className="space-y-2">
+                              {item.projectResult.map((result, idx) => (
+                                <div key={idx} className="flex items-start gap-3">
+                                  <span className="text-green-400 mt-0.5">✔</span>
+                                  <p className="text-gray-400">{result}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Week result */}
+                        {item.weekResult && (
+                          <div className="bg-[rgba(34,211,238,0.05)] rounded-lg p-5 border border-[rgba(34,211,238,0.15)]">
+                            <p className="font-semibold text-[#22D3EE] mb-3">🎯 РЕЗУЛЬТАТ НЕДЕЛИ</p>
+                            <p className="text-gray-300 mb-2">Вы:</p>
+                            <div className="space-y-2">
+                              {item.weekResult.map((r, idx) => (
+                                <div key={idx} className="flex items-start gap-3">
+                                  <span className="text-green-400 mt-0.5">✔</span>
+                                  <p className="text-gray-300">{r}</p>
+                                </div>
+                              ))}
+                            </div>
+                            {item.weekQuote && (
+                              <p className="mt-4 text-[#22D3EE] font-semibold">👉 {item.weekQuote}</p>
+                            )}
+                          </div>
+                        )}
                       </>
                     )}
                   </AccordionContent>
@@ -776,6 +836,7 @@ export default function Home() {
                 {
                   title: "самостоятельно",
                   price: "19 900 ₽",
+                  startInfo: "Старт сразу после оплаты",
                   details: [
                     { text: "Видео-уроки", included: true },
                     { text: "Чат с участниками (без куратора)", included: true },
@@ -788,6 +849,8 @@ export default function Home() {
                 {
                   title: "База — с куратором",
                   price: "24 900 ₽",
+                  startInfo: "Старт каждое 1-е число месяца",
+                  startNote: "Эффект группы + куратор + мастермайнды с Майей = супер мощные результаты",
                   details: [
                     "Видео-уроки",
                     "Обучающие материалы",
@@ -804,6 +867,8 @@ export default function Home() {
                 {
                   title: "База — куратор + Майя",
                   price: "189 000 ₽",
+                  startInfo: "Старт каждое 1-е число месяца",
+                  startNote: "Эффект группы + куратор + мастермайнды с Майей = супер мощные результаты",
                   details: [
                     "Всё из тарифа «С куратором»",
                     "Личная обратная связь от Майи",
@@ -827,9 +892,20 @@ export default function Home() {
                     </div>
                   )}
                   <h3 className="text-xl font-bold mb-2 text-gray-200">{plan.title}</h3>
-                  <p className="text-3xl font-bold mb-4" style={{ color: plan.popular ? "#22D3EE" : "#3B82F6", textShadow: plan.popular ? "0 0 15px rgba(34, 211, 238, 0.3)" : "0 0 15px rgba(59, 130, 246, 0.3)" }}>
+                  <p className="text-3xl font-bold mb-2" style={{ color: plan.popular ? "#22D3EE" : "#3B82F6", textShadow: plan.popular ? "0 0 15px rgba(34, 211, 238, 0.3)" : "0 0 15px rgba(59, 130, 246, 0.3)" }}>
                     {plan.price}
                   </p>
+                  {plan.startInfo && (
+                    <div className="mb-1 px-3 py-1.5 rounded-md bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.25)]">
+                      <p className="text-xs font-bold text-[#22D3EE]">
+                        🚀 {plan.startInfo}
+                      </p>
+                    </div>
+                  )}
+                  {plan.startNote && (
+                    <p className="text-[10px] text-gray-400 mb-3 italic">{plan.startNote}</p>
+                  )}
+                  {!plan.startNote && <div className="mb-3" />}
                   <ul className="mb-6 space-y-2 text-xs text-gray-400">
                     {plan.details.map((detail, i) => {
                       const isObject = typeof detail === 'object';
@@ -850,6 +926,18 @@ export default function Home() {
                   </Button>
                 </div>
               ))}
+            </div>
+
+            {/* URGENCY BLOCK */}
+            <div className="mt-10 text-center">
+              <div className="inline-block glass-panel rounded-lg px-8 py-6 border border-[rgba(239,68,68,0.4)]" style={{ background: 'rgba(239, 68, 68, 0.08)' }}>
+                <p className="text-lg md:text-xl font-bold text-white mb-2">
+                  ⚠️ Цена растёт каждый месяц!
+                </p>
+                <p className="text-base md:text-lg text-gray-300">
+                  Лучшее время — <span className="font-black text-[#22D3EE] text-xl">СЕЙЧАС</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -910,7 +998,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BLOCK 11.5: TESTIMONIALS */}
+        {/* BLOCK 11.5: STUDENT RESULTS */}
+        <section
+          className="py-20 md:py-32 relative overflow-hidden"
+        >
+          <div className="container max-w-6xl mx-auto px-4">
+            <h2
+              className="text-3xl md:text-5xl font-bold mb-4 text-center"
+            >
+              <span style={{ color: '#22D3EE' }}>РЕЗУЛЬТАТЫ</span> УЧЕНИКОВ
+            </h2>
+            <p className="text-gray-400 text-center mb-12 text-lg">Реальные истории тех, кто прошёл NEIROmaster</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/nuRoXFbADBTEKrdp.JPG', alt: 'Кейс Алиса' },
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/schfoHLMIpTWlKMV.JPG', alt: 'Кейс Алена' },
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/TnPHKLFYAiytVtdQ.JPG', alt: 'Кейс Вика' },
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/mXmzjgoYoxILfYsG.JPG', alt: 'Кейс Маша' },
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/uKAZykQXojbSQovs.JPG', alt: 'Кейс Яна' },
+                { img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663142814497/yTjdRxBmCGSoSzax.JPG', alt: 'Кейс Вероника' }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] as const }}
+                  viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+                >
+                  <div className="relative rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 hover:scale-[1.02]">
+                    <img
+                      src={item.img}
+                      alt={item.alt}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* BLOCK 11.6: TESTIMONIALS */}
         <section
           className="py-20 md:py-32 relative"
         >
