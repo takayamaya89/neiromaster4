@@ -146,6 +146,12 @@
   }
 }
 
+@layer utilities {
+  .font-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
 @layer components {
   .container {
     width: 100%;
